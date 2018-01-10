@@ -1,6 +1,6 @@
 # MASS
 
-## *** [Go to App](#) ***
+### *** [Go to App](#) ***
 
 For this project, I am creating an app to help me with my goal to gain weight/muscle. There are three pillars that are crucial when it comes to exercising: 1) The actual workout itself. 2) Getting adequate sleep/rest. 3) Your food intake. This app will help with the last pillar. Whether you are trying to lose weight or gain weight, it is crucial to have a proper diet. 
 
