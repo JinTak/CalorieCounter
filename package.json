@@ -1,5 +1,5 @@
 {
-  "name": "caloriecounter",
+  "name": "Mass",
   "version": "1.0.0",
   "description": "App to track my caloric intake",
   "main": "server.js",
