@@ -1,0 +1,40 @@
+// Global Variables
+$main-color-blue: #1E90FF;
+$white: #fff;
+
+// Global Styling
+* {
+    margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+    font: inherit;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: $main-color-blue;
+    color: $white;
+}
+
+h1 {
+    font-size: 100px;
+}
+
+h2 {
+    font-size: 75px;
+}
+
+.container {
+    width: 700px;
+    height: 100vh;
+    margin: 0 auto;
+    margin-top: 100px;
+    text-align: center;
+
+    form {
+        font-size: 20px;
+    }
+}

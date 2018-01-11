@@ -5,23 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Food</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+    <link rel="stylesheet" href="../styles/main.css">
 </head>
 <body>
-    <h1>Search Results</h1>
-    
-    <ul>
-        <% for(let i = 0; i < jsonBody.hits.length; i++) { %>
-            
-            <li>Name: <%= jsonBody.hits[i].fields.item_name %></li>
-            <li>Calories: <%= jsonBody.hits[i].fields.nf_calories %> Cal</li>
-            <li>Protein: <%= jsonBody.hits[i].fields.nf_protein %> g</li>
-            <li>Carbohydrates: <%= jsonBody.hits[i].fields.nf_total_carbohydrate %> g</li>
-            <li>Fat: <%= jsonBody.hits[i].fields.nf_total_fat %> g</li>
-            <br>
-            <br>
-        <% } %>
-    </ul>
-    
+
+    <div class="container">
+
+        <h2>Search Results</h2>
+
+        <ul>
+            <% for(let i = 0; i < jsonBody.hits.length; i++) { %>
+                
+                <li>Name: <%= jsonBody.hits[i].fields.item_name %></li>
+                <li>Calories: <%= jsonBody.hits[i].fields.nf_calories %> Cal</li>
+                <li>Protein: <%= jsonBody.hits[i].fields.nf_protein %> g</li>
+                <li>Carbohydrates: <%= jsonBody.hits[i].fields.nf_total_carbohydrate %> g</li>
+                <li>Fat: <%= jsonBody.hits[i].fields.nf_total_fat %> g</li>
+                <br>
+                <br>
+            <% } %>
+        </ul>
+
+    </div>
     
 
 </body>

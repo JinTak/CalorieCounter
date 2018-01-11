@@ -1,11 +1,13 @@
+// Requiring necessary modules
 var express = require('express');
-var app = express();
 var path = require('path');
 var request = require('request');
 const api = require('./env.js');
 
-const PORT = process.env.PORT || 3000;
+// Creating new Express object to handle routing
+var app = express();
 
+const PORT = process.env.PORT || 3000;
 
 app.set('views', path.join(__dirname, 'views'));
 app.engine('ejs', require('ejs').renderFile);
@@ -25,7 +27,8 @@ app.get('/food', function(req, res){
             // console.log(typeof(body));
             let jsonBody = JSON.parse(body);
             // console.log(jsonBody);
-            res.render('foodResults.ejs', {jsonBody});   
+            res.render('foodResults.ejs', { jsonBody });   
+
         }
     });
 });
