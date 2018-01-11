@@ -16,7 +16,14 @@ app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', (req, res) => {
+    console.log("Home route was hit.");
     res.sendFile(__dirname + '/views/index.html');
+});
+
+app.get('/api', (req, res)=>{
+    console.log("api route was hit");
+
+    request.redirect("https://api.nutritionix.com/v1_1/search/" + req.query.food + "?results=0%3A3&fields=item_name,brand_name,nf_calories,nf_total_carbohydrate,nf_protein,nf_total_fat,nf_serving_size_qty=1&appId=" + apiId.apiId + "&appKey=" + apiKey.apiKey + "");
 });
 
 app.get('/food', function(req, res){
