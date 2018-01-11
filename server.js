@@ -18,15 +18,13 @@ app.use(express.static(__dirname + '/public'));
 
 app.get('/', function(req, res) {
     console.log("Home route was hit.");
+
     res.sendFile(__dirname + '/views/index.html');
 });
 
 app.get('/api', function(req, res){
     console.log("api route was hit");
-    console.log(apiId.apiId);
-    console.log(apiId.apiKey);
-    // console.log("https://api.nutritionix.com/v1_1/search/" + req.query.food + "?results=0%3A3&fields=item_name,brand_name,nf_calories,nf_total_carbohydrate,nf_protein,nf_total_fat,nf_serving_size_qty=1&appId=" + apiId + "&appKey=" + apiKey + "");
-    // res.redirect("https://api.nutritionix.com/v1_1/search/" + req.query.food + "?results=0%3A3&fields=item_name,brand_name,nf_calories,nf_total_carbohydrate,nf_protein,nf_total_fat,nf_serving_size_qty=1&appId=" + apiId.apiId + "&appKey=" + apiKey.apiKey + "");
+
     request.get({
         url: "https://api.nutritionix.com/v1_1/search/" + req.query.food + "?results=0%3A3&fields=item_name,brand_name,nf_calories,nf_total_carbohydrate,nf_protein,nf_total_fat,nf_serving_size_qty=1&appId=" + apiId + "&appKey=" + apiKey + ""
     }, function(err, response, body){
@@ -34,11 +32,9 @@ app.get('/api', function(req, res){
             // console.log(typeof(body));
             var jsonBody = JSON.parse(body);
             // console.log(jsonBody);
-            console.log("https://api.nutritionix.com/v1_1/search/" + req.query.food + "?results=0%3A3&fields=item_name,brand_name,nf_calories,nf_total_carbohydrate,nf_protein,nf_total_fat,nf_serving_size_qty=1&appId=" + apiId + "&appKey=" + apiKey + "");
-
             res.json(jsonBody);   
         } else if(err){
-            console.log("https://api.nutritionix.com/v1_1/search/" + req.query.food + "?results=0%3A3&fields=item_name,brand_name,nf_calories,nf_total_carbohydrate,nf_protein,nf_total_fat,nf_serving_size_qty=1&appId=" + apiId + "&appKey=" + apiKey + "");
+            res.send(err);
         }
     });
 });
@@ -55,10 +51,14 @@ app.get('/food', function(req, res){
             // console.log(jsonBody);
             res.render('foodResults.ejs', { jsonBody });   
         } else if(err){
-            console.log("https://api.nutritionix.com/v1_1/search/" + req.query.food + "?results=0%3A3&fields=item_name,brand_name,nf_calories,nf_total_carbohydrate,nf_protein,nf_total_fat,nf_serving_size_qty=1&appId=" + apiId.apiId + "&appKey=" + apiKey.apiKey + "");
+            res.send(err);
         }
     });
 
+});
+
+app.get('*', function(req, res){
+    res.send('Sorry, Page you were looking for was not found.');
 });
 
 
