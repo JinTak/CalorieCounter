@@ -7,8 +7,6 @@ const api = require('./env.js');
 // Creating new Express object to handle routing
 var app = express();
 
-const PORT = process.env.PORT || 3000;
-
 app.set('views', path.join(__dirname, 'views'));
 app.engine('ejs', require('ejs').renderFile);
 app.set('view engine', 'ejs');
@@ -34,6 +32,6 @@ app.get('/food', function(req, res){
 });
 
 
-app.listen(PORT, function(){
+app.listen(process.env.PORT || 3000, function(){
     console.log("Server is running on PORT:" + PORT);
 });
