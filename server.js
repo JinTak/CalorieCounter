@@ -22,8 +22,8 @@ app.get('/', (req, res) => {
 
 app.get('/api', (req, res)=>{
     console.log("api route was hit");
-    // console.log(typeof(apiId.apiId));
-    // console.log(typeof(apiId.apiKey));
+    console.log(apiId.apiId);
+    console.log(apiId.apiKey);
     console.log("https://api.nutritionix.com/v1_1/search/" + req.query.food + "?results=0%3A3&fields=item_name,brand_name,nf_calories,nf_total_carbohydrate,nf_protein,nf_total_fat,nf_serving_size_qty=1&appId=" + apiId.apiId + "&appKey=" + apiKey.apiKey + "");
     // res.redirect("https://api.nutritionix.com/v1_1/search/" + req.query.food + "?results=0%3A3&fields=item_name,brand_name,nf_calories,nf_total_carbohydrate,nf_protein,nf_total_fat,nf_serving_size_qty=1&appId=" + apiId.apiId + "&appKey=" + apiKey.apiKey + "");
     request.get({
