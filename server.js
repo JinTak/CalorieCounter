@@ -2,6 +2,8 @@ var express = require('express');
 var app = express();
 var path = require('path');
 var request = require('request');
+const api = require('./env.js');
+
 const PORT = process.env.PORT || 3000;
 
 
@@ -17,10 +19,13 @@ app.get('/', (req, res) => {
 
 app.get('/food', function(req, res){
     request.get({
-        url: "https://api.nutritionix.com/v1_1/search/icecream?results=0%3A3&fields=item_name,brand_name,nf_calories&item_type=3&appId=" + + "&appKey=" + + ""
+        url: "https://api.nutritionix.com/v1_1/search/" + req.query.food + "?results=0%3A3&fields=item_name,brand_name,nf_calories,nf_total_carbohydrate,nf_protein,nf_total_fat,nf_serving_size_qty=1&appId=" + api.apiId + "&appKey=" + api.apiKey + ""
     }, function(err, response, body){
         if(!err && response.statusCode == 200){
-            res.send(body);
+            // console.log(typeof(body));
+            let jsonBody = JSON.parse(body);
+            // console.log(jsonBody);
+            res.render('foodResults.ejs', {jsonBody});   
         }
     });
 });
