@@ -24,7 +24,7 @@
             <input id="calorieSubmit" class="submit" type="submit" value="Submit">
         </form>
 
-        <form action="/food">
+        <form action="/food" method="POST">
             <label for="food">Search Food: </label>
             <br><br>
             <input type="text" name="food" placeholder="Enter food">
@@ -33,7 +33,7 @@
             <br><br><br><br>
         </form>
         
-        <form action="/createCustomFood">
+        <form action="/createCustomFood" method="POST">
             <label for="newCustomFood">Save Custom Food: </label>
             <br><br>
             <input type="text" name="foodName" placeholder="Name">
@@ -51,7 +51,7 @@
         </form>
 
 
-        <form action="/api">
+        <form action="/api" method="POST">
             <input class="submit" type="submit" value="Test API Call">
             <br><br>
         </form>
