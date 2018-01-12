@@ -5,6 +5,11 @@ var Schema = mongoose.Schema;
 
 // Defining new User Schema
 var UserSchema = new Schema({
-    name: String,
+    firstName: String,
+    lastName: String,
     password: String
 });
+
+var User = mongoose.model('User', UserSchema);
+
+module.exports = User;

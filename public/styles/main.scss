@@ -11,16 +11,18 @@ $white: #fff;
     font: inherit;
     box-sizing: border-box;
     list-style: none;
+    letter-spacing: 5px;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Anton', sans-serif;
     background: $main-color-blue;
     color: $white;
 }
 
 h1 {
     font-size: 100px;
+    letter-spacing: 15px;
 }
 
 h2 {
@@ -36,5 +38,32 @@ h2 {
 
     form {
         font-size: 20px;
+        border: 5px solid lime;
+        border-radius: 10px;
+        padding: 15px;
+        margin-bottom: 30px;
     }
+}
+
+.foodResults {
+    font-family: 'Roboto', sans-serif;
+}
+
+.submit {
+    cursor: pointer;
+}
+.submit:hover{
+    border-color: lime;
+}
+
+input {
+    padding: 10px;
+    border-radius: 10px;
+    border: 5px solid #8C8C8C;
+    
+}
+
+label {
+    font-size: 35px;
+    
 }

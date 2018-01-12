@@ -8,3 +8,6 @@ mongoose.connect( process.env.MONGODB_URI ||
 // Importing User and Food Models
 var User = require("./user.js");
 var Food = require("./food.js");
+
+module.exports.User = User;
+module.exports.Food = Food;
