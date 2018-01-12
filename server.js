@@ -65,8 +65,10 @@ app.post('/createCustomFood', (req, res)=>{
     }
 
     db.Food.create(newCustomFood, (err, food)=>{
-        console.log("The new custom food was successfully created: " + food);
+        if(err) { console.log('Error: ' + err); }
+        else { console.log("The new custom food was successfully created: " + food); }
     });
+    
     console.log(typeof(newCustomFood));
     res.json(req.body);
 });

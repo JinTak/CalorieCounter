@@ -11,26 +11,44 @@
 </head>
 <body>
 
-    <div class="container">
+    <div class="containerFoodResults">
 
         <h2>Search Results</h2>
 
-        <ul  class="foodResults">
+        <ul class="foodResults">
+
             <% for(let i = 0; i < jsonBody.hits.length; i++) { %>
                 <div class="foodResult-<%= i %>">
-                    <li>Name: <%= jsonBody.hits[i].fields.item_name %></li>
-                    <li>Calories: <%= jsonBody.hits[i].fields.nf_calories %> Cal</li>
-                    <li>Protein: <%= jsonBody.hits[i].fields.nf_protein %> g</li>
-                    <li>Carbohydrates: <%= jsonBody.hits[i].fields.nf_total_carbohydrate %> g</li>
-                    <li>Fat: <%= jsonBody.hits[i].fields.nf_total_fat %> g</li>
+                    <li><span class="lime">Name:</span> <%= jsonBody.hits[i].fields.item_name %></li>
+                    <li><span class="lime">Calories:</span> <%= jsonBody.hits[i].fields.nf_calories %> Cal</li>
+                    <li><span class="lime">Protein:</span> <%= jsonBody.hits[i].fields.nf_protein %> g</li>
+                    <li><span class="lime">Carbohydrates:</span> <%= jsonBody.hits[i].fields.nf_total_carbohydrate %> g</li>
+                    <li><span class="lime">Fat:</span> <%= jsonBody.hits[i].fields.nf_total_fat %> g</li>
+                    
                 </div>
+
+                <input type="radio" name="foodResultChoice">
 
                 <br><br>
             <% } %>
         </ul>
 
+        <button id="saveSearchedFood">Submit</button>
+
+        <br><br>
+
+        
+        
+
+        <a href="/">Search For Another Food</a>
+
+
     </div>
+
+    <div id="foodModal"></div>
     
+
+    <script src="../scripts/foodResults.js"></script>
 
 </body>
 </html>
