@@ -55,6 +55,8 @@ h2 {
     margin: 0 auto;
     margin-top: 100px;
     text-align: center;
+    border: 5px solid lime;
+    // position: relative;
 
     form {
         font-size: 20px;
@@ -94,24 +96,20 @@ label {
 }
 
 
-// Edit Food Modal Styling
-.containerEditFood {
-    width: 700px;
-    height: 100vh;
-    margin: 0 auto;
-    margin-top: 100px;
-    text-align: center;
-    position: relative;
-}
-
+// Modal Styling
 
 #foodModal {
     display: none;
-    // height: ;
-    width: 50vw;
-    margin: 0 auto;
-    background-color: pink;
-    position: fixed;
-    top: 0;
+    height: 650px;
+    width: 800px;
+    font-size: 20px;
+    padding: 20px;
+    
+    background-color: grey;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    
     z-index: 5;
 }

@@ -3,8 +3,9 @@
 var db = require("./models");
 
 
-// Resetting the database
+// Resetting the Food database
 db.Food.remove({}, (err, foods)=>{
-    console.log("Removed all foods!" + foods);
+    console.log("Removed all Foods!" + foods);
     process.exit();
 });
+

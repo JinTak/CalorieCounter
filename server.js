@@ -1,23 +1,44 @@
 // Requiring necessary modules
-let express = require('express');
-let bodyParser = require('body-parser');
-let path = require('path');
-let request = require('request');
-let apiId = process.env.apiId || require('./env.js').apiId;
-let apiKey = process.env.apiKey || require('./env.js').apiKey;
-
-// Local Port Number
-let localPORT = 3000;
-
-// Requiring Models
-var db = require('./models');
+const express = require('express');
+const bodyParser = require('body-parser');
+const path = require('path');
+const request = require('request');
 
 // Creating new Express object to handle routing
 let app = express();
 
+// Requiring Passport Modules
+const passport = require('passport');
+const session = require('express-session');
+const flash = require('connect-flash');
+
+// Hidden API Id and API Key
+let apiId = process.env.apiId || require('./env.js').apiId;
+let apiKey = process.env.apiKey || require('./env.js').apiKey;
+
+// Local Port Number
+const localPORT = 3000;
+
+// Requiring Models
+var db = require('./models');
+
 // EJS Rendering Middleware to handle form data
 app.engine('ejs', require('ejs').renderFile);
 app.set('view engine', 'ejs');
+
+
+
+
+// Setting up Passport
+app.use(session({ secret: 'HEY' }));
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(flash());
+require('./config/passport')(passport);
+
+// ===============================================
+// let router = require('./config/routes.ejs');
+// ===============================================
 
 // Setting path to views folder
 app.set('views', path.join(__dirname, 'views'));
@@ -39,22 +60,52 @@ app.get('/', (req, res)=>{
 app.post('/food', (req, res)=>{
     console.log("Food route was hit");
 
-    request.get({
-        url: "https://api.nutritionix.com/v1_1/search/" + req.body.food + "?results=0%3A3&fields=item_name,brand_name,nf_calories,nf_total_carbohydrate,nf_protein,nf_total_fat,nf_serving_size_qty=1&appId=" + apiId + "&appKey=" + apiKey + ""
-    }, (err, response, body)=>{
-        if(!err && response.statusCode == 200){
-            // console.log(typeof(body));
-            let jsonBody = JSON.parse(body);
-            // console.log(jsonBody);
-            res.render('foodResults.ejs', { jsonBody });   
-        } else if(err){
-            res.send(err);
-        }
-    });
+    // API CALL
+    // request.get({
+    //     url: "https://api.nutritionix.com/v1_1/search/" + req.body.food + "?results=0%3A3&fields=item_name,brand_name,nf_calories,nf_total_carbohydrate,nf_protein,nf_total_fat,nf_serving_size_qty=1&appId=" + apiId + "&appKey=" + apiKey + ""
+    // }, (err, response, body)=>{
+    //     if(!err && response.statusCode == 200){
+    //         // console.log(typeof(body));
+    //         let jsonBody = JSON.parse(body);
+    //         // console.log(jsonBody.hits[0]);
+    //         res.render('foodResults.ejs', { jsonBody });   
+    //     } else if(err){
+    //         res.send(err);
+    //     }
+    // });
+
+    // START - DUMMY DATA so I don't have to keep calling api
+    let dummy = {
+                    fields: [
+                        {
+                            foodName: "Birthday CAkeeee",
+                            calories: 1000,
+                            proteins: 10000,
+                            carbohydrates: 10000,
+                            fats: 100
+                        },
+                        {
+                            foodName: "Nachos",
+                            calories: 999,
+                            proteins: 999,
+                            carbohydrates: 999,
+                            fats: 999
+                        },
+                        {
+                            foodName: "Pizzaaaaa",
+                            calories: 888,
+                            proteins: 888,
+                            carbohydrates: 888,
+                            fats: 88
+                        }
+                    ]
+                }
+    res.render('foodResults.ejs', {dummy} );
+    // END - DUMMY DATA
 
 });
 
-// Route to create new Custom Form
+// Route to create new Custom Food
 app.post('/createCustomFood', (req, res)=>{
     let newCustomFood = {
         foodName: req.body.foodName,
@@ -70,6 +121,24 @@ app.post('/createCustomFood', (req, res)=>{
     });
     
     console.log(typeof(newCustomFood));
+    res.json(req.body);
+});
+
+// Route to create new food from Nutrionix API call
+app.post('/saveFood', (req, res)=>{
+    let newFood = {
+        foodName: req.body.foodName,
+        calories: req.body.calories,
+        proteins: req.body.proteins,
+        carbohydrates: req.body.carbohydrates,
+        fats: req.body.fats
+    }
+
+    // db.Food.create(newFood, (err, food)=>{
+    //     if(err) { console.log('Error: ' + err); }
+    //     else { console.log("The new custom food was successfully created: " + food); }
+    // });
+    
     res.json(req.body);
 });
 
@@ -91,6 +160,23 @@ app.post('/api', (req, res)=>{
     });
 });
 
+
+// GET: Route to signup page
+app.get('/signup', (req, res)=>{
+    res.render('./passport/signup.ejs');
+});
+// POST: Route to signup page
+app.post('/signup', (req, res, next)=>{
+    
+    let signupStragety = passport.authenticate('local-signup', {
+        successRedirect: '/',
+        failureRedirect: '/signup',
+        failureFlash: true
+    });
+
+    return signupStragety(req, res, next);
+});
+
 // Catch all route
 app.get('*', (req, res)=>{
     res.send('Sorry, Page you were looking for was not found.');
@@ -98,5 +184,5 @@ app.get('*', (req, res)=>{
 
 
 app.listen(process.env.PORT || localPORT, ()=>{
-    console.log("Server is running on PORT:" + localPORT);
+    console.log("Server is running on PORT: Andre " + localPORT);
 });
