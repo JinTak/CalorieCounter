@@ -1,3 +1,6 @@
+<!-- AUTHOR: JIN TAK -->
+<!-- Copyright 2018 JinTakInc -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,45 +15,60 @@
 
     <div class="container">
 
-        <h1>:)</h1>
+        <h1>Gains</h1>
 
+        <!-- This form asks the user for their caloric goal -->
         <form>
             <label for="caloricGoal">How many calories do you need to eat today?</label>
             <br><br>
             <input type="text" id="caloricGoal" placeholder="Caloric Goal">
             <br><br>
-            <div id="caloricGoalHere"></div>
+            <div id="caloricGoalHere">
+                Goal:
+            </div>
             <br><br>
             <input id="calorieSubmit" class="submit" type="submit" value="Submit">
         </form>
 
-        <form action="/food" method="POST">
+        <!-- This form searches is responsible for Searching the Nutrionix API  -->
+        <form action="/search-api-food" method="POST">
             <label for="food">Search Food: </label>
             <br><br>
-            <input type="text" name="food" placeholder="Enter food">
+            <input type="text" name="food" placeholder="Enter food" required>
             <br><br>
             <input class="submit" type="submit" value="Search Food">
             <br><br><br><br>
         </form>
         
-        <form action="/createCustomFood" method="POST">
+        <!-- This form allows the user to input custom foods -->
+        <form action="/create-custom-food" method="POST">
             <label >Save Custom Food: </label>
             <br><br>
-            <input type="text" name="foodName" placeholder="Name">
+            <input type="text" name="foodName" placeholder="Name" required>
             <br><br>
-            <input type="text" name="calories" placeholder="Calories">
+            <input type="text" name="calories" placeholder="Calories" required>
             <br><br>
-            <input type="text" name="proteins" placeholder="Proteins">
+            <input type="text" name="proteins" placeholder="Proteins" required>
             <br><br>
-            <input type="text" name="carbohydrates" placeholder="Carbohydrates">
+            <input type="text" name="carbohydrates" placeholder="Carbohydrates" required>
             <br><br>
-            <input type="text" name="fats" placeholder="Fats">
+            <input type="text" name="fats" placeholder="Fats" required>
             <br><br>
             <input class="submit" type="submit" value="Save Custom Food">
             <br><br><br><br>
         </form>
 
+        <!-- Search for food from database  -->
+        <form action="/search-my-food-database" method="POST">
+            <label for="myFood">Search my foods</label>
+            <br><br>
+            <input id="myFood" type="text" name="myFoodToSearch" placeholder="Enter food" required>
+            <br><br>
+            <input class="submit" type="submit" value="Search">
+        </form>
 
+
+        <!-- API TESTING! -->
         <form action="/api" method="POST">
             <input class="submit" type="submit" value="Test API Call">
             <br><br>

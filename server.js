@@ -57,17 +57,23 @@ app.get('/', (req, res)=>{
 });
 
 // Route to search food from Nutrionix
-app.post('/food', (req, res)=>{
+app.post('/search-api-food', (req, res)=>{
     console.log("Food route was hit");
 
     // API CALL
     request.get({
         url: "https://api.nutritionix.com/v1_1/search/" + req.body.food + "?results=0%3A3&fields=item_name,brand_name,nf_calories,nf_total_carbohydrate,nf_protein,nf_total_fat,nf_serving_size_qty=1&appId=" + apiId + "&appKey=" + apiKey + ""
     }, (err, response, body)=>{
-        if(!err && response.statusCode == 200){
+        let jsonBody = JSON.parse(body);
+        console.log(typeof(jsonBody.total_hits));
+        console.log(jsonBody.total_hits);
+        if(jsonBody.total_hits === 0){
+            res.redirect('/');
+        } else if(!err && response.statusCode == 200){
             // console.log(typeof(body));
-            let jsonBody = JSON.parse(body);
+            
             // console.log(jsonBody.hits[0]);
+
             res.render('foodResults.ejs', { jsonBody });   
         } else if(err){
             res.send(err);
@@ -105,8 +111,23 @@ app.post('/food', (req, res)=>{
 
 });
 
+// Route to search foods in user's database
+app.post('/search-my-food-database', (req, res)=>{
+
+    db.Food.findOne({foodName: req.body.myFoodToSearch}, function(err, food){
+        if(err){ res.send(err); } 
+        
+        if(!food){
+            res.send('Sorry, food not found!');
+        } else {
+            res.send(food);
+        }
+
+    });
+});
+
 // Route to create new Custom Food
-app.post('/createCustomFood', (req, res)=>{
+app.post('/create-custom-food', (req, res)=>{
     let newCustomFood = {
         foodName: req.body.foodName,
         calories: req.body.calories,
@@ -120,12 +141,14 @@ app.post('/createCustomFood', (req, res)=>{
         else { console.log("The new custom food was successfully created: " + food); }
     });
     
-    console.log(typeof(newCustomFood));
-    res.json(req.body);
+    // console.log(typeof(newCustomFood));
+    // res.json(req.body);
+
+    res.redirect('/');
 });
 
 // Route to create new food from Nutrionix API call
-app.post('/saveFood', (req, res)=>{
+app.post('/save-food', (req, res)=>{
     let newFood = {
         foodName: req.body.foodName,
         calories: req.body.calories,
@@ -139,7 +162,8 @@ app.post('/saveFood', (req, res)=>{
         else { console.log("The new API food was successfully created: " + food); }
     });
     
-    res.json(req.body);
+    // res.json(req.body);
+    res.redirect('/');
 });
 
 // Route to get api info

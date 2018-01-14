@@ -5,6 +5,6 @@ calorieSubmit.addEventListener('click', (e)=>{
     let putCaloricGoalHere = document.getElementById('caloricGoalHere');
     let caloric_Goal = document.getElementById('caloricGoal').value;
     caloric_Goal = Number(caloric_Goal);
-    putCaloricGoalHere.innerText = caloric_Goal;
+    putCaloricGoalHere.innerText = " " + caloric_Goal;
 });
 

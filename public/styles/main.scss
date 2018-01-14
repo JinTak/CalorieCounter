@@ -1,3 +1,6 @@
+@import "components/modal";
+@import "components/signup";
+
 // Global Variables
 $main-color-blue: #1E90FF;
 $white: #fff;
@@ -48,6 +51,10 @@ h2 {
     }
 }
 
+#caloricGoalHere {
+    font-size: 30px;
+    font-family: 'Anton', 'Roboto', sans-serif;
+}
 
 .containerFoodResults {
     width: 700px;
@@ -96,60 +103,3 @@ label {
 }
 
 
-// Modal Styling
-#foodModal-0 {
-    display: none;
-    height: 650px;
-    width: 800px;
-    font-size: 20px;
-    padding: 20px;
-    
-    background-color: grey;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    
-    z-index: 5;
-}
-#foodModal-1 {
-    display: none;
-    height: 650px;
-    width: 800px;
-    font-size: 20px;
-    padding: 20px;
-    
-    background-color: grey;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    
-    z-index: 5;
-}
-#foodModal-2 {
-    display: none;
-    height: 650px;
-    width: 800px;
-    font-size: 20px;
-    padding: 20px;
-    
-    background-color: grey;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    
-    z-index: 5;
-}
-
-.closeBtn {
-    height: 50px;
-    width: 50px;
-    color: #fff;
-    float: right;
-    font-size: 50px;
-    cursor: pointer;
-    text-align: center;
-   
-}
