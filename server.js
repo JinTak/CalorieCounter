@@ -61,46 +61,46 @@ app.post('/food', (req, res)=>{
     console.log("Food route was hit");
 
     // API CALL
-    // request.get({
-    //     url: "https://api.nutritionix.com/v1_1/search/" + req.body.food + "?results=0%3A3&fields=item_name,brand_name,nf_calories,nf_total_carbohydrate,nf_protein,nf_total_fat,nf_serving_size_qty=1&appId=" + apiId + "&appKey=" + apiKey + ""
-    // }, (err, response, body)=>{
-    //     if(!err && response.statusCode == 200){
-    //         // console.log(typeof(body));
-    //         let jsonBody = JSON.parse(body);
-    //         // console.log(jsonBody.hits[0]);
-    //         res.render('foodResults.ejs', { jsonBody });   
-    //     } else if(err){
-    //         res.send(err);
-    //     }
-    // });
+    request.get({
+        url: "https://api.nutritionix.com/v1_1/search/" + req.body.food + "?results=0%3A3&fields=item_name,brand_name,nf_calories,nf_total_carbohydrate,nf_protein,nf_total_fat,nf_serving_size_qty=1&appId=" + apiId + "&appKey=" + apiKey + ""
+    }, (err, response, body)=>{
+        if(!err && response.statusCode == 200){
+            // console.log(typeof(body));
+            let jsonBody = JSON.parse(body);
+            // console.log(jsonBody.hits[0]);
+            res.render('foodResults.ejs', { jsonBody });   
+        } else if(err){
+            res.send(err);
+        }
+    });
 
     // START - DUMMY DATA so I don't have to keep calling api
-    let dummy = {
-                    fields: [
-                        {
-                            foodName: "Birthday CAkeeee",
-                            calories: 1000,
-                            proteins: 10000,
-                            carbohydrates: 10000,
-                            fats: 100
-                        },
-                        {
-                            foodName: "Nachos",
-                            calories: 999,
-                            proteins: 999,
-                            carbohydrates: 999,
-                            fats: 999
-                        },
-                        {
-                            foodName: "Pizzaaaaa",
-                            calories: 888,
-                            proteins: 888,
-                            carbohydrates: 888,
-                            fats: 88
-                        }
-                    ]
-                }
-    res.render('foodResults.ejs', {dummy} );
+    // let dummy = {
+    //                 fields: [
+    //                     {
+    //                         foodName: "Birthday CAkeeee",
+    //                         calories: 1000,
+    //                         proteins: 99,
+    //                         carbohydrates: 123,
+    //                         fats: 22
+    //                     },
+    //                     {
+    //                         foodName: "Nachos",
+    //                         calories: 999,
+    //                         proteins: 88,
+    //                         carbohydrates: 123,
+    //                         fats: 1
+    //                     },
+    //                     {
+    //                         foodName: "Pizzaaaaa",
+    //                         calories: 44,
+    //                         proteins: 23,
+    //                         carbohydrates: 66,
+    //                         fats: 77
+    //                     }
+    //                 ]
+    //             }
+    // res.render('foodResults.ejs', {dummy} );
     // END - DUMMY DATA
 
 });
@@ -134,10 +134,10 @@ app.post('/saveFood', (req, res)=>{
         fats: req.body.fats
     }
 
-    // db.Food.create(newFood, (err, food)=>{
-    //     if(err) { console.log('Error: ' + err); }
-    //     else { console.log("The new custom food was successfully created: " + food); }
-    // });
+    db.Food.create(newFood, (err, food)=>{
+        if(err) { console.log('Error: ' + err); }
+        else { console.log("The new API food was successfully created: " + food); }
+    });
     
     res.json(req.body);
 });
