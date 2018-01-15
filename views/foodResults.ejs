@@ -11,7 +11,7 @@
 </head>
 <body>
 
-    <div class="containerFoodResults">
+    <div class="containerFoodResults container">
 
         <h2>Search Results</h2>
 
@@ -86,16 +86,16 @@
                     <label for="newFoodName">Name: </label>
                     <input id="newFoodName" type="text" name="foodName" placeholder="Name" value="<%= jsonBody.hits[1].fields.item_name %>">
                     <br><br>
-                    <label for="newFoodCalories">Calories: </label>
+                    <label for="newFoodCalories">Calories (g): </label>
                     <input id="newFoodCalories" type="text" name="calories" placeholder="Calories" value="<%= jsonBody.hits[1].fields.nf_calories %>">
                     <br><br>
-                    <label for="newFoodProteins">Proteins: </label>
+                    <label for="newFoodProteins">Proteins (g): </label>
                     <input id="newFoodProteins" type="text" name="proteins" placeholder="Proteins" value="<%= jsonBody.hits[1].fields.nf_protein %>">
                     <br><br>
-                    <label for="newFoodCarbohydrates">Carbohydrates: </label>
+                    <label for="newFoodCarbohydrates">Carbohydrates (g): </label>
                     <input id="newFoodCarbohydrates" type="text" name="carbohydrates" placeholder="Carbohydrates" value="<%= jsonBody.hits[1].fields.nf_total_carbohydrate %>">
                     <br><br>
-                    <label for="newFoodFats">Fats: </label>
+                    <label for="newFoodFats">Fats (g): </label>
                     <input id="newFoodFats" type="text" name="fats" placeholder="Fats" value="<%= jsonBody.hits[1].fields.nf_total_fat %>">
                     <br><br>
                     

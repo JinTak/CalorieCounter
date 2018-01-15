@@ -8,14 +8,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Eat More Food</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto|Anton" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Anton|Lato" rel="stylesheet">
     <link rel="stylesheet" href="../styles/main.css">
 </head>
 <body>
 
     <div class="container">
 
-        <h1>Gains</h1>
+        <h1>:)</h1>
 
         <!-- This form asks the user for their caloric goal -->
         <form>
@@ -30,9 +30,11 @@
             <input id="calorieSubmit" class="submit" type="submit" value="Submit">
         </form>
 
+
+
         <!-- This form searches is responsible for Searching the Nutrionix API  -->
         <form action="/search-api-food" method="POST">
-            <label for="food">Search Food: </label>
+            <label for="food">Search Food from Nutrionix API: </label>
             <br><br>
             <input type="text" name="food" placeholder="Enter food" required>
             <br><br>
@@ -66,6 +68,20 @@
             <br><br>
             <input class="submit" type="submit" value="Search">
         </form>
+
+        <!-- Search for food from database  -->
+        <form action="/list-all-foods" method="GET">
+            <label>List My Foods</label>
+            <br><br>
+            <input class="submit" type="submit" value="Get All Foods">
+        </form>
+
+        <!-- Update foods currently in database  -->
+        <!-- <form action="/update-food" method="POST">
+            <label>Update</label>
+            <br><br>
+            <input class="submit" type="submit" value="Update Food">
+        </form> -->
 
 
         <!-- API TESTING! -->

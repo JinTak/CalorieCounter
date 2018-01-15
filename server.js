@@ -111,20 +111,6 @@ app.post('/search-api-food', (req, res)=>{
 
 });
 
-// Route to search foods in user's database
-app.post('/search-my-food-database', (req, res)=>{
-
-    db.Food.findOne({foodName: req.body.myFoodToSearch}, function(err, food){
-        if(err){ res.send(err); } 
-        
-        if(!food){
-            res.send('Sorry, food not found!');
-        } else {
-            res.send(food);
-        }
-
-    });
-});
 
 // Route to create new Custom Food
 app.post('/create-custom-food', (req, res)=>{
@@ -146,6 +132,31 @@ app.post('/create-custom-food', (req, res)=>{
 
     res.redirect('/');
 });
+
+// Route to search foods in user's database
+app.post('/search-my-food-database', (req, res)=>{
+
+    db.Food.findOne({foodName: req.body.myFoodToSearch}, function(err, food){
+        if(err){ res.send(err); } 
+        
+        if(!food){
+            res.send('Sorry, food not found!');
+        } else {
+            res.send(food);
+        }
+
+    });
+});
+
+
+// Route to list ALL Foods from Database
+app.get('/list-all-foods', (req, res)=>{
+    db.Food.find({}, (err, foods)=>{
+        // console.log(albums);
+        res.json(foods);
+    });
+});
+
 
 // Route to create new food from Nutrionix API call
 app.post('/save-food', (req, res)=>{
