@@ -1,9 +1,9 @@
-// var router = require('express').Router();
+var router = require('express').Router();
 
-// router.get('/', (req, res)=>{
-//     res.send("Sanity Check");
-// });
+router.get('/', (req, res)=>{
+    res.send("Sanity Check");
+});
 
-// router.get('/signup', (req, res)=>{
+router.get('/signup', (req, res)=>{
 
-// });
+});

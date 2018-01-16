@@ -7,7 +7,7 @@
 $main-color-blue: #1E90FF;
 $secondary-color-blue: #7FDBFF;
 $white: #fff;
-$lime: lime;
+$blue: blue;
 $Lato: 'lato';
 $black: #000;
 $green: #3D9970;
@@ -24,8 +24,18 @@ $green: #3D9970;
     letter-spacing: 5px;
     
 }
-
-button {
+a {
+    text-decoration: none;
+    &:visited {
+        color: black;
+    }
+}
+.button {
+    width: 100px;
+    padding: 5px 10px;
+    border-radius: 3px;
+    border: 3px solid black;
+    background: $white;
     cursor: pointer;
 }
 
@@ -36,10 +46,10 @@ body {
     height: 100%;
 }
 
-.lime {
-    color: $lime;
+.blue {
+    color: $blue;
     font-size: 20px;
-    text-shadow: 0 0 10px $green;
+    font-family: 'Permanent Marker';
 }
 input {
     outline: none;

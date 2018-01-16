@@ -22,7 +22,7 @@ $lime: #01FF70;
     
     h1 {
         font-size: 40px;
-        font-family: 'Anton';
+        font-family: 'Permanent Marker', 'Anton';
         margin-bottom: 20px;
         letter-spacing: 10px;
     }
@@ -47,6 +47,7 @@ $lime: #01FF70;
 
 
     .form_input {
+        font-family: 'Roboto', sans-serif;
 
         input {
             padding-left: 20px;
@@ -67,13 +68,14 @@ $lime: #01FF70;
 
         label {
             font-size: 20px;
+            
         }
         
         #email {
             height: 50px;
             width: 350px;
             border-bottom: 3px solid transparent;
-            margin-top: 10px;
+            margin-top: 20px;
 
             &:focus {
                 border-bottom: 3px solid $lime;
@@ -87,7 +89,7 @@ $lime: #01FF70;
             height: 50px;
             width: 350px;
             border-bottom: 3px solid transparent;
-            margin-top: 10px;
+            margin-top: 20px;
 
             &:focus {
                 border-bottom: 3px solid $lime;
