@@ -78,7 +78,7 @@ app.post('/search-api-food', (req, res)=>{
         // console.log(typeof(jsonBody.total_hits));
         // console.log(jsonBody.total_hits);
         if(jsonBody.total_hits === 0){
-            res.redirect('/');
+            res.redirect('/eat');
         } else if(!err && response.statusCode == 200){
             // console.log(typeof(body));
             
@@ -184,7 +184,7 @@ app.post('/save-food', (req, res)=>{
     });
     
     // res.json(req.body);
-    res.redirect('/home');
+    res.redirect('/eat');
 });
 
 // Route to get api info

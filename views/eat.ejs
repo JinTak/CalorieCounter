@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Eat!</title>
+    <title>MASS | Eat</title>
 
     <link href="https://fonts.googleapis.com/css?family=Roboto|Anton|Lato|Permanent+Marker" rel="stylesheet">
     <link rel="stylesheet" href="../styles/main.css">
@@ -41,7 +41,7 @@
         
         <!-- This form allows the user to input custom foods -->
         <form action="/create-custom-food" method="POST">
-            <label >Save Custom Food: </label>
+            <label >Enter Custom Food: </label>
             <br><br>
             <input type="text" name="foodName" placeholder="Name" required>
             <br><br>
@@ -52,14 +52,14 @@
             <input type="text" name="carbohydrates" placeholder="Carbohydrates" required>
             <br><br>
             <input type="text" name="fats" placeholder="Fats" required>
-            <br><br>
-            <input class="submit" type="submit" value="Save Custom Food">
-            <br><br><br><br>
+            <br><br><br>
+            <input class="submit" type="submit" value="Eat & Save">
+            <br><br><br>
         </form>
 
         <!-- Search for food from database  -->
         <form action="/search-my-food-database" method="POST">
-            <label for="myFood">Search my foods</label>
+            <label for="myFood">Search My Foods</label>
             <br><br>
             <input id="myFood" type="text" name="myFoodToSearch" placeholder="Enter food" required>
             <br><br>
