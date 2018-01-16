@@ -1,4 +1,4 @@
-var putGoalHere = document.getElementById('goal');
+var putGoalHere = document.getElementById('caloricGoalHere');
 var goal = localStorage.getItem('caloricGoal');
 
 

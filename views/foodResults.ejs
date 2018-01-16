@@ -15,21 +15,25 @@
 
         <h2>Search Results</h2>
 
+        <h3>Any of These?</h3>
+
+        <br>
+
         <ul class="foodResults">
 
             <!-- Actual Project -->
             <% for(let i = 0; i < jsonBody.hits.length; i++) { %>
-                <div class="foodResult-<%= i %>">
-                    <li><span class="blue">Name:</span> <span class="foodResultsText"><%= jsonBody.hits[i].fields.item_name %></span></li>
-                    <li><span class="blue">Calories:</span> <span class="foodResultsText"><%= jsonBody.hits[i].fields.nf_calories %> Cal</span></li>
-                    <li><span class="blue">Protein:</span> <span class="foodResultsText"><%= jsonBody.hits[i].fields.nf_protein %> g</span></li>
-                    <li><span class="blue">Carbohydrates:</span> <span class="foodResultsText"><%= jsonBody.hits[i].fields.nf_total_carbohydrate %> g</span></li>
-                    <li><span class="blue">Fat:</span> <span class="foodResultsText"><%= jsonBody.hits[i].fields.nf_total_fat %> g</span></li>
+                <div class="generatedFoodList" id="foodResult-<%= i %>">
+                    <li><span class="yellow">Name:</span> <span class="foodResultsText"><%= jsonBody.hits[i].fields.item_name %></span></li>
+                    <li><span class="yellow">Calories:</span> <span class="foodResultsText"><%= jsonBody.hits[i].fields.nf_calories %> Cal</span></li>
+                    <li><span class="yellow">Protein:</span> <span class="foodResultsText"><%= jsonBody.hits[i].fields.nf_protein %> g</span></li>
+                    <li><span class="yellow">Carbohydrates:</span> <span class="foodResultsText"><%= jsonBody.hits[i].fields.nf_total_carbohydrate %> g</span></li>
+                    <li><span class="yellow">Fat:</span> <span class="foodResultsText"><%= jsonBody.hits[i].fields.nf_total_fat %> g</span></li> 
                     
+                    <input class="apiFoodChoiceRadio" type="radio" name="foodResultChoice">
                 </div>
                 
-                <input class="apiFoodChoiceRadio" type="radio" name="foodResultChoice">
-
+               
                 <br><br>
             
             <% } %>
@@ -40,9 +44,14 @@
         <!-- <form action="/savefoodquery" method="POST">
             <input type="submit" value="Save">
         </form> -->
-        <button id="saveSearchedFood" class="button">Submit</button>
+        <div class="saveFoodButtonsContainer">
+            <button id="saveSearchedFoodBtn" class="button">Submit</button>
 
-        <a class="button" href="/home">Search For Another Food</a>
+            <br><br><br>
+    
+            <a class="button" href="/home">Search For Another Food</a>
+        </div>
+        
 
     </div>
 

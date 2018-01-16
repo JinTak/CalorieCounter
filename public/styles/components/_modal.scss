@@ -1,10 +1,13 @@
+// Global Variables
+$yellow: #FFDC00;
+$orange: #FF851B; 
+$red: #EE4000;
+$black: #000;
 
 // Modal Styling
-
-
 #foodModal-0 {
     display: none;
-    height: 650px;
+    height: 80%;
     width: 800px;
     font-size: 20px;
     padding: 20px;
@@ -19,7 +22,7 @@
 }
 #foodModal-1 {
     display: none;
-    height: 650px;
+    height: 80%;
     width: 800px;
     font-size: 20px;
     padding: 20px;
@@ -34,7 +37,7 @@
 }
 #foodModal-2 {
     display: none;
-    height: 650px;
+    height: 80%;
     width: 800px;
     font-size: 20px;
     padding: 20px;
@@ -61,4 +64,90 @@
 
 #newFoodName {
     width: 75%;
+}
+
+
+//////////////////////////////////
+// Landing Page More Info Modal //
+//////////////////////////////////
+#infoModal {
+    display: none;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0,0,0,0.6);
+    position: relative;
+
+    h2 {
+        font-size: 40px;
+    }
+
+    #infoCloseBtn {
+        height: 50px;
+        width: 50px;
+        font-size: 50px;
+        border: 5px solid $black;
+        border-radius: 50%;
+        top: 15px;
+        right: 15px;
+        padding-left: 4px;
+        position: absolute;
+        text-align: center;
+        line-height: 40px;
+        cursor: pointer;
+        transition: all .1s;
+
+        &:hover {
+            border-color: $red; 
+            color: $red;
+        }
+    }
+
+    #infoModalContent {
+        
+        position: absolute;
+        height: 650px;
+        width: 750px;
+        font-family: 'Roboto';
+        border: 10px solid $yellow;
+        border-radius: 10px;
+        background-color: rgba(255,255,255,0.85);
+        padding: 25px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        p {
+            font-size: 20px;
+            line-height: 35px;
+            text-indent: 2em;
+            letter-spacing: 3px;
+        }
+
+    }
+
+    #doWork {
+        color: $yellow;
+        background-color: $black;
+        width: 400px;
+        height: 100px;
+        text-align: center;
+        line-height: 80px;
+        margin: 0 5% 0 35%;
+        font-size: 60px;
+        font-family: 'Permanent Marker';
+        border: 5px solid $yellow;
+    }
+
+    .big {
+        font-size: 25px;
+    }
+
+    .bigger {
+        font-size: 30px;
+    }
+
+    .biggest {
+        font-size: 40px;
+    }
+
 }

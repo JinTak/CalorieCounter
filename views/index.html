@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Eat More Food</title>
+    <title>Mass</title>
 
-    <link href="https://fonts.googleapis.com/css?family=Roboto|Anton|Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Anton|Lato|Permanent+Marker" rel="stylesheet">
     <link rel="stylesheet" href="../styles/main.css">
 </head>
-<body style="background: url('../images/landing_background.jpg'); background-size: cover; background-repeat: none;">
+<body>
+<div id="landingContainer">
     
     <div class="hero">
         <div class="message">
@@ -23,8 +24,54 @@
         <form action="/signin" method="POST" class="links">
             <input style="background: #f8d902; cursor: pointer;" type="submit" value="Sign In &gt;">
         </form>
+
+        <div class="links" id="moreInfo">
+            &#63;
+        </div>
     </div>
     
+
+    <!-- More Info Modal  -->
+    <div id="infoModal">
+        <div id="infoModalContent">
+            <span id="infoCloseBtn">&times;</span>  
+            <h2>Welcome to <span class="permanentMarker">MASS</span>,</h2>
+            <br>
+            <p>
+                This app is dedicated to all the scrawny/skinny/bony guys out there. Have you ever tried to gain muscle mass but miserably failed?
+                You've probably worked your ass off at the gym, but have gotten nowhere. Here's the reason why. YOU DON'T EAT ENOUGH. 
+                Use this app to track your calories. If you want to get big... Use
+                this app, EAT, WORKOUT, EAT, SLEEP, <span class="big permanentMarker">EAT</span>, <span class="bigger permanentMarker">EAT,</span><span class="biggest permanentMarker">EAT!</span>  
+                <br><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Oh, one last thing, No one gives a shit about your first world problems of gaining more weight, so stop 
+                complaining and <div id="doWork">DO WORK</div>
+            </p>
+           
+        </div>
+    </div>
+</div>
+
+
+    <script>
+        // Open info modal
+        let moreInfo = document.getElementById('moreInfo');
+        moreInfo.addEventListener('click', function(){
+            infoModal.style.display = 'block';
+        });
+
+        // Close info modal when 'x' is clicked
+        let infoClose = document.getElementById('infoCloseBtn');
+        infoClose.addEventListener('click', function() {
+            infoModal.style.display = "none";
+        });
+        // Close modal if user clicks outside of modal
+        window.addEventListener('click', function(e) {
+            if(e.target == infoModal){
+                infoModal.style.display = "none";
+            }
+        });
+
+    </script>
 
 </body>
 </html>

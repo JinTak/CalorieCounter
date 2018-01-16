@@ -4,40 +4,50 @@ $main-color-blue: #1E90FF;
 $secondary-color-blue: #7FDBFF;
 $red: crimson; 
 $lime: #01FF70;
+$black: #000;
+$grey: #A9A9A9;
 
 #authentication_body {
     width: 100%; 
     height: 100vh; 
-    background-image: linear-gradient(to right bottom, $main-color-blue, $secondary-color-blue);
+    background-image: linear-gradient(to right bottom, $grey, $orange);
 }
 
 .authentication_container {
-    width: 40%;
+    width: 30%;
     height: 80%;
     margin: 60px auto;
     padding-top: 50px;
     background-color: rgba(255,255,255, 0.7);
     box-shadow: 0 20px 20px rgba(#000, .5); 
     text-align: center;
+    border: 5px solid $yellow;
     
     h1 {
-        font-size: 40px;
+        width: 80%;
+        font-size: 50px;
         font-family: 'Permanent Marker', 'Anton';
         margin-bottom: 20px;
         letter-spacing: 10px;
+        margin: 0 auto;
+       
     }
 
     form {
         padding: 20px;
 
+        label {
+            font-family: 'Permanent Marker';
+        }
+
         #authentication_submit {
             width: 150px;
             padding: 10px;
+            font-family: 'Permanent Marker';
             border-radius: 3px;
             border: 3px solid black;
             cursor: pointer;
             margin-top: 50px;
-            transition: border .2s;
 
             &:hover {
                 border: 3px solid $main-color-blue;
@@ -102,6 +112,8 @@ $lime: #01FF70;
        
     }
 }
+
+
 
 
 

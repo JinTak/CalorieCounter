@@ -1,3 +1,20 @@
+$main-color-blue: #1E90FF;
+$secondary-color-blue: #7FDBFF;
+$yellow: #FFDC00;
+$orange: #FF851B; 
+$red: #EE4000;
+$white: #fff;
+$lime: lime;
+$Lato: 'lato';
+$black: #000;
+$green: #3D9970;
+
+#landingContainer {
+  height: 100vh;
+  width: 100%;
+  background-image: url('../images/landing_background.jpg');
+  background-size: cover; 
+}
 
 .hero {
     position: absolute;
@@ -6,29 +23,49 @@
     
   }
   
-  .hero .message span{
-    display: block;
-    float:  left;
-    clear: both;
-    background-color: black;
-    color: #f8d902;
-    font-weight: 900;
-    font-size: 84px;
-    padding: 0 20px;
-    margin: 5px 0;
-    cursor: default;
-  }
+.hero .message span{
+  display: block;
+  float:  left;
+  clear: both;
+  background-color: black;
+  color: #f8d902;
+  font-weight: 900;
+  font-size: 84px;
+  padding: 0 20px;
+  margin: 5px 0;
+  cursor: default;
   
-  .links {
-    clear: both;
-    background-color: #f8d902;
-    float: left;
-    font-size: 23px;
-    padding: 10px 20px;
-    font-weight: bold;
-    margin-top: 5px;
-    cursor: pointer;
-    margin-bottom: 10px;
+}
+
+.links {
+  clear: both;
+  background-color: #f8d902;
+  float: left;
+  font-size: 23px;
+  padding: 10px 20px;
+  font-weight: bold;
+  margin-top: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  border: 5px solid $yellow;
+  
+  transition: all .3s;
+
+  &:hover {
+    border: 5px solid $black;
   }
+}
+
+#moreInfo {
+  border: 5px solid $black;
+  transition: all .3s;
+
+  &:hover {
+      border-color: $yellow;
+      background: $black;
+      color: $yellow;
+  }
+}
+
   
   

@@ -34,9 +34,17 @@ a {
     width: 100px;
     padding: 5px 10px;
     border-radius: 3px;
-    border: 3px solid black;
+    border: 5px solid black;
     background: $white;
     cursor: pointer;
+    transition: all .3s;
+
+
+    &:hover {
+        border: 5px solid $yellow;
+        background: $black;
+        color: $yellow;
+    }
 }
 
 body {
@@ -46,13 +54,15 @@ body {
     height: 100%;
 }
 
-.blue {
-    color: $blue;
-    font-size: 20px;
+.yellow {
+    color: $orange;
+    font-size: 30px;
     font-family: 'Permanent Marker';
 }
 input {
     outline: none;
 }
 
-
+.permanentMarker {
+    font-family: 'Permanent Marker';
+}

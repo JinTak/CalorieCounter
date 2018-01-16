@@ -140,7 +140,7 @@ app.post('/create-custom-food', (req, res)=>{
     // console.log(typeof(newCustomFood));
     // res.json(req.body);
 
-    res.redirect('/home');
+    res.redirect('/eat');
 });
 
 // Route to search foods in user's database

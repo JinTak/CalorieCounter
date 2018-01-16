@@ -16,9 +16,14 @@
 
         <h1>Mass</h1>
 
-        <h2>Your Goal for Today</h2>
+        <h2>Your Goal for Today:</h2>
         <div id="goal">
-                Goal: <span id="caloricGoalHere"></span>
+            <span id="caloricGoalHere"></span> Cal
+        </div>
+
+        <h2>Currently At:</h2>
+        <div id="remainingContainer">
+            <span id="remainingCalories">0</span> Cal
         </div>
 
         <h3>What did you just eat?</h3>
@@ -26,7 +31,7 @@
 
         <!-- This form searches is responsible for Searching the Nutrionix API  -->
         <form action="/search-api-food" method="POST">
-            <label for="food">Search Food from Nutrionix API: </label>
+            <label for="food">Search Food Online: </label>
             <br><br>
             <input type="text" name="food" placeholder="Enter food" required>
             <br><br>

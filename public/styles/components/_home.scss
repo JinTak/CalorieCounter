@@ -26,6 +26,7 @@ $green: #3D9970;
         font-family: 'Permanent Marker', 'Anton', sans-serif;
         width: 600px;
         margin: 0 auto;
+        margin-bottom: 10px;
         background: $black;
         color: $yellow;
         box-shadow: 0 20px 20px rgba(#000, .5); 
@@ -38,13 +39,13 @@ $green: #3D9970;
     }
     
     h3 {
-        font-size: 30px;
+        font-size: 35px;
         font-family: 'Permanent Marker', 'Anton', sans-serif;
         color: $black;
     }
 
     h4 {
-        font-size: 10px;
+        font-size: 30px;
         font-family: 'Permanent Marker', 'Anton', sans-serif;
         color: $black;
     }
@@ -55,15 +56,17 @@ $green: #3D9970;
         border-radius: 5px;
         padding: 15px;
         margin-bottom: 30px;
-        width: 700px;
+        width: 55%;
         margin: 50px auto;
         background: $black;
         box-shadow: 0 20px 20px rgba(#000, .5); 
     }
+
     input {
         padding: 10px;
         border-radius: 5px;
-        border: 3px solid $red;
+        border: 3px solid $yellow;
+        box-shadow: 0 0 10px $yellow;
         letter-spacing: 4px;
         
     
@@ -86,15 +89,35 @@ $green: #3D9970;
     }
 }
 
+#goal {
+    font-family: 'Permanent Marker';
+    font-size: 40px;
+    text-shadow: 0 0 20px $black;
+}
+
 #caloricGoalHere {
     font-size: 30px;
     font-family: 'Permanent Marker', 'Anton', 'Roboto', sans-serif;
+    font-size: 90px;
+    text-shadow: 0 0 20px $black;
+}
+
+#remainingContainer {
+    font-family: 'Permanent Marker';
+    font-size: 40px;
+    text-shadow: 0 0 20px $black;
+
+    #remainingCalories {
+        font-size: 70px;
+        color: $yellow;
+        text-shadow: 0 0 20px $black;
+    }
 }
 
 .containerFoodResults {
     width: 100%;
     height: 100%;
-
+    background-image: linear-gradient(to right bottom, $yellow, $red);
 
     h2 {
         width: 700px;
@@ -102,20 +125,56 @@ $green: #3D9970;
         background: $black;
         margin-bottom: 20px;
         font-family: 'Permanent Marker', 'Anton', sans-serif;
+        color: $yellow;
     }
+
+    .foodResultsText {
+        font-size: 20px;
+        font-family: 'Roboto';
+    }
+
+    .generatedFoodList {
+        border: 2px solid $red;
+        width: 65%;
+        margin: 0 auto;
+        padding: 20px;
+        background: $black;
+        color: $yellow;
+    }
+    .saveFoodButtonsContainer {
+        padding: 50px;
+    }
+
+    #saveSearchedFoodBtn {
+        font-size: 30px;
+        width: 250px;
+
+    }
+
+
+    
+}
+
+// input[type=radio]:checked ~ .check {
+//     border: 5px solid #0DFF92;
+//   }
+
+.apiFoodChoiceRadio {
+    margin-top: 20px;
     
 }
 
 .foodResults {
     font-family: $Lato, 'Roboto', sans-serif;
     color: $black;
-    
-    
+   
 }
+
 
 .submit {
     cursor: pointer;
 }
 .submit:hover{
     border-color: $lime;
+    box-shadow: 0 0 20px $green;
 }
