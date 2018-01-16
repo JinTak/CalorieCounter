@@ -56,6 +56,10 @@ app.get('/', (req, res)=>{
     res.sendFile(__dirname + '/views/index.html');
 });
 
+app.get('/home', (req, res)=>{
+    res.sendFile(__dirname + '/views/home.html');
+});
+
 // Route to search food from Nutrionix
 app.post('/search-api-food', (req, res)=>{
     console.log("Food route was hit");
@@ -130,7 +134,7 @@ app.post('/create-custom-food', (req, res)=>{
     // console.log(typeof(newCustomFood));
     // res.json(req.body);
 
-    res.redirect('/');
+    res.redirect('/home');
 });
 
 // Route to search foods in user's database
@@ -174,7 +178,7 @@ app.post('/save-food', (req, res)=>{
     });
     
     // res.json(req.body);
-    res.redirect('/');
+    res.redirect('/home');
 });
 
 // Route to get api info
@@ -200,11 +204,23 @@ app.post('/api', (req, res)=>{
 app.get('/signup', (req, res)=>{
     res.render('./passport/signup.ejs');
 });
+
 // POST: Route to signup page
 app.post('/signup', (req, res, next)=>{
     
     let signupStragety = passport.authenticate('local-signup', {
-        successRedirect: '/',
+        successRedirect: '/home',
+        failureRedirect: '/signup',
+        failureFlash: true
+    });
+
+    return signupStragety(req, res, next);
+});
+
+// POST: Route to signin page
+app.post('/signin', (req, res, next)=>{
+    let signupStragety = passport.authenticate('local-signup', {
+        successRedirect: '/home',
         failureRedirect: '/signup',
         failureFlash: true
     });

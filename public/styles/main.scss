@@ -1,5 +1,7 @@
 @import "components/modal";
-@import "components/signup";
+@import "components/signupin";
+@import "components/home";
+@import "components/landing";
 
 // Global Variables
 $main-color-blue: #1E90FF;
@@ -7,6 +9,8 @@ $secondary-color-blue: #7FDBFF;
 $white: #fff;
 $lime: lime;
 $Lato: 'lato';
+$black: #000;
+$green: #3D9970;
 
 // Global Styling
 * {
@@ -18,6 +22,7 @@ $Lato: 'lato';
     box-sizing: border-box;
     list-style: none;
     letter-spacing: 5px;
+    
 }
 
 button {
@@ -29,97 +34,15 @@ body {
     background-size: cover;
     background-repeat: none;
     height: 100%;
-    color: $white;
-}
-
-h1 {
-    font-size: 100px;
-    letter-spacing: 15px;
-}
-
-h2 {
-    font-size: 75px;
-}
-.container {
-    width: 100%;
-    height: 100%;
-    background-image: linear-gradient(to right bottom, $main-color-blue, $secondary-color-blue);
-
-    margin: 0 auto;
-    padding-top: 100px;
-    text-align: center;
-    form {
-        font-size: 20px;
-        border: 5px solid $lime;
-        border-radius: 10px;
-        padding: 15px;
-        margin-bottom: 30px;
-        width: 700px;
-        margin: 50px auto;
-    }
-}
-
-#caloricGoalHere {
-    font-size: 30px;
-    font-family: $Lato, 'Anton', 'Roboto', sans-serif;
-}
-
-// .containerFoodResults {
-//     width: 100%;
-//     height: 100%;
-//     margin: 0 auto;
-//     padding-top: 100px;
-//     text-align: center;
-//     // border: 5px solid lime;
-//     // position: relative;
-
-//     form {
-//         font-size: 20px;
-//         border: 5px solid $lime;
-//         border-radius: 10px;
-//         padding: 15px;
-//         margin-bottom: 30px;
-//     }
-// }
-
-.foodResults {
-    font-family: $Lato, 'Roboto', sans-serif;
-}
-
-.submit {
-    cursor: pointer;
-}
-.submit:hover{
-    border-color: $lime;
-}
-
-input {
-    padding: 10px;
-    border-radius: 5px;
-    border: 3px solid rgb(177, 177, 177);
-    letter-spacing: 4px;
-
-    &::-webkit-input-placeholder {
-        opacity: 0.7;
-    }
-
-    &::-moz-placeholder {
-        opacity: 0.7;  
-    }
-
-    &:-ms-input-placeholder {
-        opacity: 0.7;
-    }
-}
-
-label {
-    font-size: 35px;
-    
 }
 
 .lime {
     color: $lime;
     font-size: 20px;
+    text-shadow: 0 0 10px $green;
+}
+input {
+    outline: none;
 }
 
 

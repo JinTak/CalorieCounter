@@ -20,11 +20,11 @@
             <!-- Actual Project -->
             <% for(let i = 0; i < jsonBody.hits.length; i++) { %>
                 <div class="foodResult-<%= i %>">
-                    <li><span class="lime">Name:</span> <%= jsonBody.hits[i].fields.item_name %></li>
-                    <li><span class="lime">Calories:</span> <%= jsonBody.hits[i].fields.nf_calories %> Cal</li>
-                    <li><span class="lime">Protein:</span> <%= jsonBody.hits[i].fields.nf_protein %> g</li>
-                    <li><span class="lime">Carbohydrates:</span> <%= jsonBody.hits[i].fields.nf_total_carbohydrate %> g</li>
-                    <li><span class="lime">Fat:</span> <%= jsonBody.hits[i].fields.nf_total_fat %> g</li>
+                    <li><span class="lime">Name:</span> <span class="foodResultsText"><%= jsonBody.hits[i].fields.item_name %></span></li>
+                    <li><span class="lime">Calories:</span> <span class="foodResultsText"><%= jsonBody.hits[i].fields.nf_calories %> Cal</span></li>
+                    <li><span class="lime">Protein:</span> <span class="foodResultsText"><%= jsonBody.hits[i].fields.nf_protein %> g</span></li>
+                    <li><span class="lime">Carbohydrates:</span> <span class="foodResultsText"><%= jsonBody.hits[i].fields.nf_total_carbohydrate %> g</span></li>
+                    <li><span class="lime">Fat:</span> <span class="foodResultsText"><%= jsonBody.hits[i].fields.nf_total_fat %> g</span></li>
                     
                 </div>
                 

@@ -1,0 +1,104 @@
+// Global Variables
+$main-color-blue: #1E90FF;
+$secondary-color-blue: #7FDBFF;
+$yellow: #FFDC00;
+$orange: #FF851B; 
+$red: red;
+$white: #fff;
+$lime: lime;
+$Lato: 'lato';
+$black: #000;
+$green: #3D9970;
+
+.container {
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to right bottom, $yellow, $orange);
+    color: $black;
+    
+    margin: 0 auto;
+    padding-top: 50px;
+    text-align: center;
+
+    h1 {
+        font-size: 150px;
+        letter-spacing: 15px;
+        font-family: 'Permanent Marker', 'Anton', sans-serif;
+    }
+    
+    h2 {
+        font-size: 75px;
+    }
+
+    form {
+        font-size: 20px;
+        border: 2px solid rgba(255, 0, 0, 0.7);
+        border-radius: 10px;
+        padding: 15px;
+        margin-bottom: 30px;
+        width: 700px;
+        margin: 50px auto;
+    }
+    input {
+        padding: 10px;
+        border-radius: 5px;
+        border: 3px solid rgb(177, 177, 177);
+        letter-spacing: 4px;
+        
+    
+        &::-webkit-input-placeholder {
+            opacity: 0.7;
+        }
+    
+        &::-moz-placeholder {
+            opacity: 0.7;  
+        }
+    
+        &:-ms-input-placeholder {
+            opacity: 0.7;
+        }
+    }
+    
+    label {
+        font-size: 35px;
+        
+    }
+}
+
+#caloricGoalHere {
+    font-size: 30px;
+    font-family: $Lato, 'Anton', 'Roboto', sans-serif;
+}
+
+// .containerFoodResults {
+//     width: 100%;
+//     height: 100%;
+//     margin: 0 auto;
+//     padding-top: 100px;
+//     text-align: center;
+//     // border: 5px solid lime;
+//     // position: relative;
+
+//     form {
+//         font-size: 20px;
+//         border: 5px solid $lime;
+//         border-radius: 10px;
+//         padding: 15px;
+//         margin-bottom: 30px;
+//     }
+// }
+
+.foodResults {
+    font-family: $Lato, 'Roboto', sans-serif;
+    .foodResultsText{
+        text-shadow: 0 0 8px $black;
+    }
+    
+}
+
+.submit {
+    cursor: pointer;
+}
+.submit:hover{
+    border-color: $lime;
+}

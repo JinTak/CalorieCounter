@@ -5,29 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Signup</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Anton" rel="stylesheet">
+
 
     <link rel="stylesheet" href="../../styles/main.css">
 </head>
-<body>
+<body id="authentication_body">
 
-    <form action="/signup" method="POST">
+    <div class="authentication_container">
+        <h1>Sign Up</h1>
+        <form id="authentication_form" action="/signup" method="POST">
 
-        <div class="form_input">
-            <input id="email" type="email" name="email" placeholder="Enter Email" required>
-            <label for="email">Email</label>
-        </div>
-        
-        <br>
-        
-        <div class="hi"></div>
-        <div class="form_input">
-            <input id="password" type="password" name="password" placeholder="Enter Password" required>
-            <label for="password">Password</label>
-        </div>
-        
+            <div class="form_input">
+                   
+                <label for="email">Email</label>
+                <br>
+                <input id="email" type="email" name="email" placeholder="Enter Email" required>
+                
+            </div>
+            
+            <br>
 
+            <div class="form_input">
+            
+                <label for="password">Password</label>
+                <br>
+                <input id="password" type="password" name="password" placeholder="Enter Password" required>
+                
+            </div>
+            <br>
+            <input id="authentication_submit" type="submit" value="Submit">
 
-    </form>
+        </form>
+    </div>  
 
 </body>
 </html>

@@ -1,0 +1,34 @@
+
+.hero {
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    
+  }
+  
+  .hero .message span{
+    display: block;
+    float:  left;
+    clear: both;
+    background-color: black;
+    color: #f8d902;
+    font-weight: 900;
+    font-size: 84px;
+    padding: 0 20px;
+    margin: 5px 0;
+    cursor: default;
+  }
+  
+  .links {
+    clear: both;
+    background-color: #f8d902;
+    float: left;
+    font-size: 23px;
+    padding: 10px 20px;
+    font-weight: bold;
+    margin-top: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+  
+  
