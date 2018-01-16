@@ -31,55 +31,13 @@
         </form>
 
         <!-- EAT FOOD -->
-        <!-- <form >
-            <input type="submit" value="Eat!">
-        </form> -->
-
-
-
-        <!-- This form searches is responsible for Searching the Nutrionix API  -->
-        <form action="/search-api-food" method="POST">
-            <label for="food">Search Food from Nutrionix API: </label>
+        <form action="/eat" method="GET">
+            <label for="">Eat Somethin Bitch!</label>
             <br><br>
-            <input type="text" name="food" placeholder="Enter food" required>
-            <br><br>
-            <input class="submit" type="submit" value="Search Food">
-            <br><br><br><br>
+            <input class="submit" type="submit" value="Eat!">
         </form>
+
         
-        <!-- This form allows the user to input custom foods -->
-        <form action="/create-custom-food" method="POST">
-            <label >Save Custom Food: </label>
-            <br><br>
-            <input type="text" name="foodName" placeholder="Name" required>
-            <br><br>
-            <input type="text" name="calories" placeholder="Calories" required>
-            <br><br>
-            <input type="text" name="proteins" placeholder="Proteins" required>
-            <br><br>
-            <input type="text" name="carbohydrates" placeholder="Carbohydrates" required>
-            <br><br>
-            <input type="text" name="fats" placeholder="Fats" required>
-            <br><br>
-            <input class="submit" type="submit" value="Save Custom Food">
-            <br><br><br><br>
-        </form>
-
-        <!-- Search for food from database  -->
-        <form action="/search-my-food-database" method="POST">
-            <label for="myFood">Search my foods</label>
-            <br><br>
-            <input id="myFood" type="text" name="myFoodToSearch" placeholder="Enter food" required>
-            <br><br>
-            <input class="submit" type="submit" value="Search">
-        </form>
-
-        <!-- Search for food from database  -->
-        <form action="/list-all-foods" method="GET">
-            <label>List My Foods</label>
-            <br><br>
-            <input class="submit" type="submit" value="Get All Foods">
-        </form>
 
         <!-- Update foods currently in database  -->
         <!-- <form action="/update-food" method="POST">

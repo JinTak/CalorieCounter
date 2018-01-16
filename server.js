@@ -28,18 +28,12 @@ app.engine('ejs', require('ejs').renderFile);
 app.set('view engine', 'ejs');
 
 
-
-
 // Setting up Passport
 app.use(session({ secret: 'HEY' }));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 require('./config/passport')(passport);
-
-// ===============================================
-// let router = require('./config/routes.ejs');
-// ===============================================
 
 // Setting path to views folder
 app.set('views', path.join(__dirname, 'views'));
@@ -49,6 +43,13 @@ app.use(express.static(__dirname + '/public'));
 // Body parser middleware
 app.use(bodyParser.urlencoded( {extended: true} ));
 app.use(bodyParser.json());
+
+// Using routes in config directory
+// var router = require('./config/routes.js');
+// app.use(router);
+
+
+
 
 // Home Route
 app.get('/', (req, res)=>{
@@ -61,6 +62,10 @@ app.get('/home', (req, res)=>{
     res.sendFile(__dirname + '/views/home.html');
 });
 
+app.get('/eat', (req, res)=>{
+    res.render('eat.ejs');
+});
+
 // Route to search food from Nutrionix
 app.post('/search-api-food', (req, res)=>{
     console.log("Food route was hit");
@@ -70,8 +75,8 @@ app.post('/search-api-food', (req, res)=>{
         url: "https://api.nutritionix.com/v1_1/search/" + req.body.food + "?results=0%3A3&fields=item_name,brand_name,nf_calories,nf_total_carbohydrate,nf_protein,nf_total_fat,nf_serving_size_qty=1&appId=" + apiId + "&appKey=" + apiKey + ""
     }, (err, response, body)=>{
         let jsonBody = JSON.parse(body);
-        console.log(typeof(jsonBody.total_hits));
-        console.log(jsonBody.total_hits);
+        // console.log(typeof(jsonBody.total_hits));
+        // console.log(jsonBody.total_hits);
         if(jsonBody.total_hits === 0){
             res.redirect('/');
         } else if(!err && response.statusCode == 200){

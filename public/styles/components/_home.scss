@@ -30,9 +30,23 @@ $green: #3D9970;
         color: $yellow;
         box-shadow: 0 20px 20px rgba(#000, .5); 
     }
-    
+
     h2 {
         font-size: 75px;
+        font-family: 'Permanent Marker', 'Anton', sans-serif;
+        color: $black;
+    }
+    
+    h3 {
+        font-size: 30px;
+        font-family: 'Permanent Marker', 'Anton', sans-serif;
+        color: $black;
+    }
+
+    h4 {
+        font-size: 10px;
+        font-family: 'Permanent Marker', 'Anton', sans-serif;
+        color: $black;
     }
 
     form {

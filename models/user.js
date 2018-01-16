@@ -1,3 +1,5 @@
+// Author: Jin Tak
+
 // Requiring mongoose module
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt-nodejs');
@@ -5,9 +7,9 @@ let Schema = mongoose.Schema;
 
 // Defining new User Schema
 let UserSchema = new Schema({
-    username: String,
-    email: String,
-    password: String
+    username  : String,
+    email     : String,
+    password  : String
 });
 
 UserSchema.methods.encrypt = (password)=>{

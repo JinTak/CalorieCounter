@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Eat!</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Anton|Lato|Permanent+Marker" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+
+
+    <div class="container">
+
+        <h1>Mass</h1>
+
+        <h2>Your Goal for Today</h2>
+        <div id="goal">
+                Goal: <span id="caloricGoalHere"></span>
+        </div>
+
+        <h3>What did you just eat?</h3>
+        <h4>Search from options below</h4>
+
+        <!-- This form searches is responsible for Searching the Nutrionix API  -->
+        <form action="/search-api-food" method="POST">
+            <label for="food">Search Food from Nutrionix API: </label>
+            <br><br>
+            <input type="text" name="food" placeholder="Enter food" required>
+            <br><br>
+            <input class="submit" type="submit" value="Search Food">
+            <br><br><br><br>
+        </form>
+        
+        <!-- This form allows the user to input custom foods -->
+        <form action="/create-custom-food" method="POST">
+            <label >Save Custom Food: </label>
+            <br><br>
+            <input type="text" name="foodName" placeholder="Name" required>
+            <br><br>
+            <input type="text" name="calories" placeholder="Calories" required>
+            <br><br>
+            <input type="text" name="proteins" placeholder="Proteins" required>
+            <br><br>
+            <input type="text" name="carbohydrates" placeholder="Carbohydrates" required>
+            <br><br>
+            <input type="text" name="fats" placeholder="Fats" required>
+            <br><br>
+            <input class="submit" type="submit" value="Save Custom Food">
+            <br><br><br><br>
+        </form>
+
+        <!-- Search for food from database  -->
+        <form action="/search-my-food-database" method="POST">
+            <label for="myFood">Search my foods</label>
+            <br><br>
+            <input id="myFood" type="text" name="myFoodToSearch" placeholder="Enter food" required>
+            <br><br>
+            <input class="submit" type="submit" value="Search">
+        </form>
+
+        <!-- Search for food from database  -->
+        <form action="/list-all-foods" method="GET">
+            <label>List My Foods</label>
+            <br><br>
+            <input class="submit" type="submit" value="Get All Foods">
+        </form>
+
+
+    </div>
+
+
+    <script src="../scripts/eat.js"></script>
+</body>
+</html>
