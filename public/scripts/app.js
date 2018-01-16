@@ -5,8 +5,10 @@ calorieSubmit.addEventListener('click', (e)=>{
     let putCaloricGoalHere = document.getElementById('caloricGoalHere');
     let caloric_Goal = document.getElementById('calorieGoalInput').value;
     caloric_Goal = Number(caloric_Goal);
+
     putCaloricGoalHere.innerText = " " + caloric_Goal;
 
-    localStorage.setItem("caloricGoal", caloric_Goal);
+    localStorage.setItem("caloriesEaten", caloric_Goal);
+    localStorage.setItem("setGoal", caloric_Goal);
 });
 

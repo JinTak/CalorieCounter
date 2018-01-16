@@ -1,8 +1,10 @@
 // Populating Caloric Goal with data from local storage
 var putGoalHere = document.getElementById('caloricGoalHere');
-var goal = localStorage.getItem('caloricGoal');
+// Remaining Calories span
+var remainingCalories = document.getElementById('remainingCalories');
+// Retrieve caloric goal from localStorage
+var setGoal = localStorage.getItem('setGoal');
+var caloriesEaten = localStorage.getItem('caloriesEaten');
 
-
-console.log(putGoalHere);
-console.log(goal);
-putGoalHere.innerHTML = goal;
+putGoalHere.innerHTML = setGoal;
+remainingCalories.innerHTML = caloriesEaten;

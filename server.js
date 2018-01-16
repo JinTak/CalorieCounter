@@ -146,7 +146,7 @@ app.post('/create-custom-food', (req, res)=>{
 // Route to search foods in user's database
 app.post('/search-my-food-database', (req, res)=>{
 
-    db.Food.findOne({foodName: req.body.myFoodToSearch}, function(err, food){
+    db.Food.findOne({ foodName: req.body.myFoodToSearch }, function(err, food){
         if(err){ res.send(err); } 
         
         if(!food){

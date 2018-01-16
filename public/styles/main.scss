@@ -24,6 +24,14 @@ $green: #3D9970;
     letter-spacing: 5px;
     
 }
+
+body {
+    font-family: $Lato, 'Anton', sans-serif;
+    background-size: cover;
+    background-repeat: none;
+    height: 100%;
+}
+
 a {
     text-decoration: none;
     &:visited {
@@ -32,8 +40,9 @@ a {
 }
 .button {
     width: 100px;
+    font-size: 20px;
     padding: 5px 10px;
-    border-radius: 3px;
+    border-radius: 10px;
     border: 5px solid black;
     background: $white;
     cursor: pointer;
@@ -47,12 +56,6 @@ a {
     }
 }
 
-body {
-    font-family: $Lato, 'Anton', sans-serif;
-    background-size: cover;
-    background-repeat: none;
-    height: 100%;
-}
 
 .yellow {
     color: $orange;

@@ -119,6 +119,7 @@ $green: #3D9970;
     width: 100%;
     height: 100%;
     background-image: linear-gradient(to right bottom, $yellow, $red);
+    
 
     h2 {
         width: 700px;
@@ -127,6 +128,7 @@ $green: #3D9970;
         margin-bottom: 20px;
         font-family: 'Permanent Marker', 'Anton', sans-serif;
         color: $yellow;
+        border-radius: 10px;
     }
 
     .foodResultsText {
@@ -141,6 +143,7 @@ $green: #3D9970;
         padding: 20px;
         background: $black;
         color: $yellow;
+        border-radius: 10px;
     }
     .saveFoodButtonsContainer {
         padding: 50px;
@@ -149,6 +152,7 @@ $green: #3D9970;
     #saveSearchedFoodBtn {
         font-size: 30px;
         width: 250px;
+        border-radius: 10px;
 
     }
 
