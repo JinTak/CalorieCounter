@@ -208,6 +208,45 @@ app.post('/api', (req, res)=>{
     });
 });
 
+// UPDATE ROUTE
+app.put('/update-food/:id', (req, res)=>{
+
+    console.log('hit update route');
+
+    // if(!req.body.foodName || !req.body.calories || !req.body.proteins || !req.body.carbohydrates || !req.body.fats ){
+    //     res.json("Please enter foodName, calories, carbohydrates, proteins, & fats properties.");
+    // } else {
+    db.Food.findOneAndUpdate({_id: req.params.id}, {$set:{foodName:req.body.foodName, calories:req.body.calories, proteins:req.body.proteins, carbohydrates:req.body.carbohydrates, fats:req.body.fats }}, {new:true}, function(err, food){
+        if(err) {
+            res.json("Food not found.");
+        }
+        else {
+            res.json("Found the Food.");
+        console.log(food);
+        };
+    });
+    
+});
+
+// DELETE ROUTE
+app.delete('/delete-food/:id', (req, res)=>{
+
+    console.log('hit delete route');
+
+    db.Food.findById(req.params.id, function (err, food) {
+        
+        db.Food.remove( {_id: req.params.id }, (err) => {
+          if(err) {
+            res.json("Error: Food was not removed.");
+          }
+          else {
+            res.json("Successfully removed " + food + "!")
+            console.log("Successfully removed " + food + "!");}
+        }); 
+        
+    });
+});
+
 
 // GET: Route to signup page
 app.get('/signup', (req, res)=>{
