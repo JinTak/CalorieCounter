@@ -27,9 +27,9 @@
                 <div class="generatedFoodList" id="foodResult-<%= i %>">
                     <li><span class="yellow">Name:</span> <span class="foodResultsText"><%= jsonBody.hits[i].fields.item_name %></span></li>
                     <li><span class="yellow">Calories:</span> <span class="foodResultsText"><%= jsonBody.hits[i].fields.nf_calories %> Cal</span></li>
-                    <li><span class="yellow">Protein:</span> <span class="foodResultsText"><%= jsonBody.hits[i].fields.nf_protein %> g</span></li>
+                    <li><span class="yellow">Proteins:</span> <span class="foodResultsText"><%= jsonBody.hits[i].fields.nf_protein %> g</span></li>
                     <li><span class="yellow">Carbohydrates:</span> <span class="foodResultsText"><%= jsonBody.hits[i].fields.nf_total_carbohydrate %> g</span></li>
-                    <li><span class="yellow">Fat:</span> <span class="foodResultsText"><%= jsonBody.hits[i].fields.nf_total_fat %> g</span></li> 
+                    <li><span class="yellow">Fats:</span> <span class="foodResultsText"><%= jsonBody.hits[i].fields.nf_total_fat %> g</span></li> 
                     
                     <input class="apiFoodChoiceRadio" type="radio" name="foodResultChoice">
                 </div>

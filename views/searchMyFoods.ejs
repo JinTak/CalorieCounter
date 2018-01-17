@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MASS | Search My Foods</title>
+</head>
+<body>
+
+    <ul>
+        <li id="foodName"><%= food.foodName; %> </li> 
+        <li id="calories"><%= food.calories; %> </li>
+        <li id="proteins"><%= food.proteins; %> </li>
+        <li id="carbohydrates"><%= food.carbohydrates; %> </li>
+        <li id="fats"><%= food.fats; %> </li>
+    </ul>
+    
+
+    <a href="/eat" id="eatFoodBtn">Eat Food</a>
+
+    <a href="/eat">Go Back</a>
+
+    
+    <script src="../scripts/searchMyFoods.js"></script>
+</body>
+</html>

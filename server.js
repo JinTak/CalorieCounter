@@ -152,18 +152,21 @@ app.post('/search-my-food-database', (req, res)=>{
         if(!food){
             res.send('Sorry, food not found!');
         } else {
-            res.send(food);
-        }
+            // console.log(typeof(food));
+            res.render('searchMyFoods.ejs',  {food} );
+        } 
 
     });
+
 });
 
 
 // Route to list ALL Foods from Database
 app.get('/list-all-foods', (req, res)=>{
     db.Food.find({}, (err, foods)=>{
-        // console.log(albums);
-        res.json(foods);
+        if(err){ res.send(err); }
+        
+        res.render('listAllMyFoods.ejs', { foods });
     });
 });
 
