@@ -4,7 +4,13 @@ var putGoalHere = document.getElementById('caloricGoalHere');
 var remainingCalories = document.getElementById('remainingCalories');
 // Retrieve caloric goal from localStorage
 var setGoal = localStorage.getItem('setGoal');
-var caloriesEaten = localStorage.getItem('caloriesEaten');
+var caloriesRemaining = localStorage.getItem('caloriesRemaining');
+
+// Checking if user has hit caloric goal!
+if(caloriesRemaining <= 0) {
+    window.location.href = "/congratulations";
+}
+
 
 putGoalHere.innerHTML = setGoal;
-remainingCalories.innerHTML = caloriesEaten;
+remainingCalories.innerHTML = caloriesRemaining;

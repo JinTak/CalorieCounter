@@ -183,7 +183,7 @@ app.post('/save-food', (req, res)=>{
         else { console.log("The new API food was successfully created: " + food); }
     });
     
-    // res.json(req.body);
+    
     res.redirect('/eat');
 });
 
@@ -232,6 +232,11 @@ app.post('/signin', (req, res, next)=>{
     });
 
     return signupStragety(req, res, next);
+});
+
+// Route to congratulations page
+app.get('/congratulations', (req, res)=>{
+    res.sendFile(path.join(__dirname+'/views/congratulations.html'));
 });
 
 // Catch all route

@@ -53,14 +53,20 @@ for(var i = 0; i < modalCloseButton.length; i++){
 /////////////////////////////////////////////////////////////
 
 // Retrieve caloric goal from localStorage
-var newGoal = localStorage.getItem('caloriesEaten');
+var newGoal = localStorage.getItem('caloriesRemaining');
 
 var foodModalSubmit = document.getElementsByClassName('foodModalSubmit');
 for(var i = 0; i < foodModalSubmit.length; i++) {
     foodModalSubmit[i].addEventListener('click', function(){
         let eaten = pickedFood.getElementsByTagName('input')[1].value;
         newGoal = newGoal - eaten;
-        localStorage.setItem('caloriesEaten', newGoal);
+        if(newGoal <= 0){
+            localStorage.setItem('caloriesRemaining', 0);
+            window.location.href("/congratulations");
+            
+        } else {
+            localStorage.setItem('caloriesRemaining', newGoal);
+        }
        
     });
 }

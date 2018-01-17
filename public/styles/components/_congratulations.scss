@@ -1,0 +1,71 @@
+$orange: #FF851B; 
+$red: #EE4000;
+
+#congratsContainer {
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(to right bottom, $yellow, $red);
+
+
+    #congratsContent {
+        width: 80%;
+        height: 100%;
+        margin: 0 auto;
+        padding: 50px;
+        text-align: center;
+
+        h1 {
+            font-family: 'Permanent Marker';
+            font-size: 200px;
+        }   
+
+        p {
+            font-size: 60px;
+        }
+    }
+
+    #startOver {
+        display: inline-block;
+        margin-top: 40px;
+        border: 5px solid black;
+        padding: 20px;
+        font-size: 50px;
+        border-radius: 10px;
+        background: yellow;
+        transition: all .3s;
+        
+        &:hover {
+            background: black;
+            color: yellow;
+            border-color: yellow;
+        }
+    }
+
+}
+
+/* animations */
+.congrats {
+    animation-duration: 2s;
+    animation-name: winnerText;
+    animation-iteration-count: 3;
+    animation-direction: alternate;
+    animation-timing-function: ease-inout;
+    animation-fill-mode: forwards;
+}
+
+@keyframes winnerText {
+    0%{
+        color: yellow;
+    }
+    50%{
+        // font-size: 130px;
+        color: #F012BE;
+    }
+    75%{
+        // font-size: 140px;
+        color: orangered;
+    }
+    100%{
+        color: black;
+    }
+}

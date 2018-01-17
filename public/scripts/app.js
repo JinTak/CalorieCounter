@@ -1,3 +1,5 @@
+
+// Getting caloric goal from user
 let calorieSubmit = document.getElementById('calorieSubmit');
 
 calorieSubmit.addEventListener('click', (e)=>{
@@ -8,7 +10,7 @@ calorieSubmit.addEventListener('click', (e)=>{
 
     putCaloricGoalHere.innerText = " " + caloric_Goal;
 
-    localStorage.setItem("caloriesEaten", caloric_Goal);
+    localStorage.setItem("caloriesRemaining", caloric_Goal);
     localStorage.setItem("setGoal", caloric_Goal);
 });
 
