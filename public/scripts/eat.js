@@ -6,6 +6,26 @@ var remainingCalories = document.getElementById('remainingCalories');
 var setGoal = localStorage.getItem('setGoal');
 var caloriesRemaining = localStorage.getItem('caloriesRemaining');
 
+var eatCustomFoodBtn = document.getElementById('eatCustomFoodBtn');
+var newGoal = localStorage.getItem('caloriesRemaining');
+
+
+eatCustomFoodBtn.addEventListener('click', ()=>{
+    
+    var customFoodForm = new FormData(document.getElementById("customFoodForm"));
+    var eaten = customFoodForm.get("calories");
+   
+    newGoal = newGoal - eaten;
+    if(newGoal <= 0){
+        localStorage.setItem('caloriesRemaining', 0);
+        
+    } else {
+        localStorage.setItem('caloriesRemaining', newGoal);
+    }
+
+});
+
+
 // Checking if user has hit caloric goal!
 if(caloriesRemaining <= 0) {
     window.location.href = "/congratulations";

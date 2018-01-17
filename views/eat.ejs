@@ -39,7 +39,7 @@
         </form>
         
         <!-- This form allows the user to input custom foods -->
-        <form action="/create-custom-food" method="POST">
+        <form id="customFoodForm" action="/create-custom-food" method="POST">
             <label >Eat Custom Food: </label>
             <br><br>
             <input type="text" name="foodName" placeholder="Name" required>
@@ -52,7 +52,7 @@
             <br><br>
             <input type="text" name="fats" placeholder="Fats" required>
             <br><br><br>
-            <input class="submit" type="submit" value="Eat & Save">
+            <input id="eatCustomFoodBtn" class="submit" type="submit" value="Eat & Save">
             <br><br><br>
         </form>
 
