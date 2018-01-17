@@ -6,37 +6,45 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>MASS | All My Foods</title>
 
-    <!-- <link href="https://fonts.googleapis.com/css?family=Roboto|Anton|Permanent+Marker" rel="stylesheet">
-    <link rel="stylesheet" href="../styles/main.css"> -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Anton|Permanent+Marker" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/main.css">
 </head>
 <body>
 
-    You have <%= foods.length %> food(s) saved. 
+    <div class="foodListContainer">
+
+        <h1>You have <span id="big"><%= foods.length %></span> food(s) saved.</h1> 
+
+        <div class="centeringContainer">
+            <!-- Actual Project -->
+            <% for(let i = 0; i < foods.length; i++) { %>
+                <div class="theFood">
+                    <ul class="allMyFoods">
+                        <li><span class="label">Name:</span> <span id="foodName"><%= foods[i].foodName %></span></li>
+                        <li><span class="label">Calories:</span> <span id="calories"><%= foods[i].calories %></span> Cal</li>
+                        <li><span class="label">Proteins:</span> <span id="proteins"><%= foods[i].proteins %></span> g</li>
+                        <li><span class="label">Carbohydrates:</span> <span id="carbohydrates"><%= foods[i].carbohydrates %></span> g</li>
+                        <li><span class="label">Fats:</span> <span id="fats"><%= foods[i].fats %></span> g</li> 
+
+                        <div class="btnContainer">
+                            <a class="eatMyFoodBtns" href="/eat">Eat Food</a>
+                        </div>
+
+                        <br>
+                    </ul>  
+                </div> 
+            <% } %>
+        </div>
+
+
+        <div class="backContainer">
+            <a id="backToEatBtn" href="/eat">Go Back</a>
+        </div>
+     
 
     </div>
 
-    <ul class="allMyFoods">
-        <!-- Actual Project -->
-        <% for(let i = 0; i < foods.length; i++) { %>
-            <div>
-                <li><span class="yellow">Name:</span> <span id="foodName"><%= foods[i].foodName %></span></li>
-                <li><span class="yellow">Calories:</span> <span id="calories"><%= foods[i].calories %></span> Cal</li>
-                <li><span class="yellow">Proteins:</span> <span id="proteins"><%= foods[i].proteins %></span> g</li>
-                <li><span class="yellow">Carbohydrates:</span> <span id="carbohydrates"><%= foods[i].carbohydrates %></span> g</li>
-                <li><span class="yellow">Fats:</span> <span id="fats"><%= foods[i].fats %></span> g</li> 
 
-                <a class="eatMyFoodBtns" href="#">Eat Food</a>
-            </div>
-    
-            <br>
-        
-        <% } %>
-
-    </ul>
-
-    <a href="/eat">Go Back</a>
-
-    
     <script src="../scripts/listAllMyFoods.js"></script>
 </body>
 </html>

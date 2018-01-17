@@ -17,18 +17,19 @@ and watch the progress bar fill up. This app is meant to have a minimalistic des
 ### Technologies Used
 FRONT END: 
 - HTML
-- CSS/SASS
+- CSS/SASS (Compass? for svg gooey menu)
 - Javascript/ (Three.js? or jQuery? for progress bar)
 
 BACK END:
 - Node.js for Server Language
 - Passport.js for Authentication/Authorization
 - Express.js for Web Server/Routing
-- MongoDB/Mongoose for data storage
-- Heroku for deployment
+- MongoDB/Mongoose for Data Storage
+- Heroku for Deployment
 
 ### Biggest Obstacles
-TBD
+- SVG gooey menu.
+- Dynamically filling progress bar.
 
 [Wireframe](#)
 

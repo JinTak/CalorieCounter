@@ -4,7 +4,9 @@ var newGoal = localStorage.getItem('caloriesRemaining');
 for(let i = 0; i < eatMyFoodBtns.length; i++){
     eatMyFoodBtns[i].addEventListener('click', ()=>{
         let parent = eatMyFoodBtns[i].parentNode;
-        let caloriesEaten = parent.querySelector('#calories').innerText;
+        let anotherParent = parent.parentNode;
+        
+        let caloriesEaten = anotherParent.querySelector('#calories').innerText;
         caloriesEaten = Number(caloriesEaten);
 
         newGoal = newGoal - caloriesEaten;

@@ -1,8 +1,10 @@
 var Food = require("../models/food");
 var User = require("../models/user");
 var expect = require("chai").expect;
+var request = require('request');
+var URL = "https://eatmorefood.herokuapp.com";
 
-describe("Checking if Models work...", ()=>{
+describe("Checking if Models are functioning properly...", ()=>{
     // FOOD
     describe("TESTING new Food!", () => {
         it("initializes a new Food: Testing foodName", ()=>{
@@ -43,4 +45,17 @@ describe("Checking if Models work...", ()=>{
     });
 
     // SERVER
+});
+
+
+
+describe("Testing heroku deployment", () => {
+
+    it("should receive a 200 / OK HTTP status code", (done) => {
+        request(URL, (err, res, body) => {
+            expect(res.statusCode).to.eq(200);
+            done();
+        });
+    });
+
 });

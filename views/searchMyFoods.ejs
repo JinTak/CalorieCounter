@@ -5,22 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>MASS | Search My Foods</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Anton|Permanent+Marker" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/main.css">
 </head>
 <body>
-
-    <ul>
-        <li id="foodName"><%= food.foodName; %> </li> 
-        <li id="calories"><%= food.calories; %> </li>
-        <li id="proteins"><%= food.proteins; %> </li>
-        <li id="carbohydrates"><%= food.carbohydrates; %> </li>
-        <li id="fats"><%= food.fats; %> </li>
-    </ul>
-    
-
-    <a href="/eat" id="eatFoodBtn">Eat Food</a>
-
-    <a href="/eat">Go Back</a>
-
+    <div class="singleFoodContainer">
+        <div class="singleFood">
+            <ul>
+                <li><label>Name: </label><span id="foodName"><%= food.foodName; %> </span></li> 
+                <li><label>Calories: </label><span id="calories"><%= food.calories; %> </span></li>
+                <li><label>Proteins: </label><span id="proteins"><%= food.proteins; %> </span></li>
+                <li><label>Carbohydrates: </label><span id="carbohydrates"><%= food.carbohydrates; %> </span></li>
+                <li><label>Fats: </label><span id="fats"><%= food.fats; %> g</span></li>
+            </ul>
+            
+        
+            <a href="/eat" id="eatFoodBtn">Eat Food</a>
+        
+            <a href="/eat" id="goBackBtn">Go Back</a>
+        </div>
+    </div>
     
     <script src="../scripts/searchMyFoods.js"></script>
 </body>
