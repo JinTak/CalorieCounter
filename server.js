@@ -248,3 +248,6 @@ app.get('*', (req, res)=>{
 app.listen(process.env.PORT || localPORT, ()=>{
     console.log("Server is running on PORT: Andre " + localPORT);
 });
+
+
+module.exports = app;

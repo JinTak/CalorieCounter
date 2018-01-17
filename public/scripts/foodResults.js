@@ -62,7 +62,6 @@ for(var i = 0; i < foodModalSubmit.length; i++) {
         newGoal = newGoal - eaten;
         if(newGoal <= 0){
             localStorage.setItem('caloriesRemaining', 0);
-            window.location.href("/congratulations");
             
         } else {
             localStorage.setItem('caloriesRemaining', newGoal);

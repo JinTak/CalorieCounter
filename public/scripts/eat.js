@@ -14,3 +14,4 @@ if(caloriesRemaining <= 0) {
 
 putGoalHere.innerHTML = setGoal;
 remainingCalories.innerHTML = caloriesRemaining;
+
