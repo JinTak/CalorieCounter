@@ -16,6 +16,7 @@
         <h2>Search Results</h2>
 
         <h3>Any of These?</h3>
+        <h4>Select One & Hit Save</h4>
 
         <br>
 
@@ -59,25 +60,29 @@
         <div class="modalContent">
             <span class="closeBtn">&times;</span>    
             <form action="/save-food" method="POST">
-                <label>Edit Food b4 Saving: </label>
-                <br><br>
+                <label id="editLabel">Edit Before Saving: </label>
+                <br><br><br>
                 <label for="newFoodName">Name: </label>
                 <input id="newFoodName" type="text" name="foodName" placeholder="Name" value="<%= jsonBody.hits[0].fields.item_name %>">
                 <br><br>
-                <label for="newFoodCalories">Calories: </label>
+                <label for="newFoodCalories">Calories (g): </label>
                 <input id="newFoodCalories" type="text" name="calories" placeholder="Calories" value="<%= jsonBody.hits[0].fields.nf_calories %>">
                 <br><br>
-                <label for="newFoodProteins">Proteins: </label>
+                <label for="newFoodProteins">Proteins (g): </label>
                 <input id="newFoodProteins" type="text" name="proteins" placeholder="Proteins" value="<%= jsonBody.hits[0].fields.nf_protein %>">
                 <br><br>
-                <label for="newFoodCarbohydrates">Carbohydrates: </label>
+                <label for="newFoodCarbohydrates">Carbohydrates (g): </label>
                 <input id="newFoodCarbohydrates" type="text" name="carbohydrates" placeholder="Carbohydrates" value="<%= jsonBody.hits[0].fields.nf_total_carbohydrate %>">
                 <br><br>
-                <label for="newFoodFats">Fats: </label>
+                <label for="newFoodFats">Fats (g): </label>
                 <input id="newFoodFats" type="text" name="fats" placeholder="Fats" value="<%= jsonBody.hits[0].fields.nf_total_fat %>">
                 <br><br>
-                
-                <input class="submit foodModalSubmit" type="submit" value="Eat & Save">
+
+                <div class="foodModalSubmitBtnContainer">
+                   
+                    <input class="submit foodModalSubmit" type="submit" value="Eat & Save">
+
+                </div>
                 <br><br><br><br>
             </form>
         </div>
@@ -87,25 +92,29 @@
             <div class="modalContent">
                 <span class="closeBtn">&times;</span>    
                 <form action="/save-food" method="POST">
-                    <label>Edit Food b4 Saving: </label>
-                    <br><br>
+                    <label id="editLabel">Edit Before Saving: </label>
+                    <br><br><br>
                     <label for="newFoodName">Name: </label>
                     <input id="newFoodName" type="text" name="foodName" placeholder="Name" value="<%= jsonBody.hits[1].fields.item_name %>">
                     <br><br>
-                    <label for="newFoodCalories">Calories (g): </label>
+                    <label for="newFoodCalories">Calories </label> (g):
                     <input id="newFoodCalories" type="text" name="calories" placeholder="Calories" value="<%= jsonBody.hits[1].fields.nf_calories %>">
                     <br><br>
-                    <label for="newFoodProteins">Proteins (g): </label>
+                    <label for="newFoodProteins">Proteins </label> (g):
                     <input id="newFoodProteins" type="text" name="proteins" placeholder="Proteins" value="<%= jsonBody.hits[1].fields.nf_protein %>">
                     <br><br>
-                    <label for="newFoodCarbohydrates">Carbohydrates (g): </label>
+                    <label for="newFoodCarbohydrates">Carbohydrates </label> (g):
                     <input id="newFoodCarbohydrates" type="text" name="carbohydrates" placeholder="Carbohydrates" value="<%= jsonBody.hits[1].fields.nf_total_carbohydrate %>">
                     <br><br>
-                    <label for="newFoodFats">Fats (g): </label>
+                    <label for="newFoodFats">Fats </label> (g):
                     <input id="newFoodFats" type="text" name="fats" placeholder="Fats" value="<%= jsonBody.hits[1].fields.nf_total_fat %>">
                     <br><br>
                     
-                    <input class="submit foodModalSubmit" type="submit" value="Eat & Save">
+                    <div class="foodModalSubmitBtnContainer">
+                   
+                            <input class="submit foodModalSubmit" type="submit" value="Eat & Save">
+        
+                    </div>               
                     <br><br><br><br>
                 </form>
             </div>
@@ -115,25 +124,29 @@
             <div class="modalContent">
                 <span class="closeBtn">&times;</span>    
                 <form action="/save-food" method="POST">
-                    <label>Edit Food b4 Saving: </label>
-                    <br><br>
+                    <label id="editLabel">Edit Before Saving: </label>
+                    <br><br><br>
                     <label for="newFoodName">Name: </label>
                     <input id="newFoodName" type="text" name="foodName" placeholder="Name" value="<%= jsonBody.hits[2].fields.item_name %>">
                     <br><br>
-                    <label for="newFoodCalories">Calories: </label>
+                    <label for="newFoodCalories">Calories </label> (g):
                     <input id="newFoodCalories" type="text" name="calories" placeholder="Calories" value="<%= jsonBody.hits[2].fields.nf_calories %>">
                     <br><br>
-                    <label for="newFoodProteins">Proteins: </label>
+                    <label for="newFoodProteins">Proteins </label> (g):
                     <input id="newFoodProteins" type="text" name="proteins" placeholder="Proteins" value="<%= jsonBody.hits[2].fields.nf_protein %>">
                     <br><br>
-                    <label for="newFoodCarbohydrates">Carbohydrates: </label>
+                    <label for="newFoodCarbohydrates">Carbohydrates </label> (g):
                     <input id="newFoodCarbohydrates" type="text" name="carbohydrates" placeholder="Carbohydrates" value="<%= jsonBody.hits[2].fields.nf_total_carbohydrate %>">
                     <br><br>
-                    <label for="newFoodFats">Fats: </label>
+                    <label for="newFoodFats">Fats </label> (g):
                     <input id="newFoodFats" type="text" name="fats" placeholder="Fats" value="<%= jsonBody.hits[2].fields.nf_total_fat %>">
                     <br><br>
                     
-                    <input class="submit foodModalSubmit" type="submit" value="Eat & Save">
+                    <div class="foodModalSubmitBtnContainer">
+                   
+                        <input class="submit foodModalSubmit" type="submit" value="Eat & Save">
+        
+                    </div>                    
                     <br><br><br><br>
                 </form>
             </div>

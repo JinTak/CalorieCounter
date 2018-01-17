@@ -12,6 +12,7 @@ $blue: blue;
 $Lato: 'lato';
 $black: #000;
 $green: #3D9970;
+$red: orangered;
 
 // Global Styling
 * {
@@ -48,7 +49,7 @@ a {
     background: $white;
     cursor: pointer;
     transition: all .3s;
-
+    font-family: 'Permanent Marker';
 
     &:hover {
         border: 5px solid $yellow;
@@ -59,8 +60,8 @@ a {
 
 
 .yellow {
-    color: $orange;
-    font-size: 30px;
+    color: $yellow;
+    font-size: 27px;
     font-family: 'Permanent Marker';
 }
 input {

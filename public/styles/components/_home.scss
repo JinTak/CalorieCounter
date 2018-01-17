@@ -132,10 +132,14 @@ $green: #3D9970;
         color: $yellow;
         border-radius: 10px;
     }
+    h4 {
+        font-size: 25px;
+    }
 
     .foodResultsText {
-        font-size: 20px;
+        font-size: 25px;
         font-family: 'Roboto';
+        color: white;
     }
 
     .generatedFoodList {
@@ -153,7 +157,7 @@ $green: #3D9970;
 
     #saveSearchedFoodBtn {
         font-size: 30px;
-        width: 250px;
+        width: 300px;
         border-radius: 10px;
 
     }
@@ -184,6 +188,7 @@ $green: #3D9970;
 
 .submit {
     cursor: pointer;
+    font-family: 'Permanent Marker';
 }
 .submit:hover{
     border-color: $lime;

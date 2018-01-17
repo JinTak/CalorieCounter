@@ -45,9 +45,9 @@ $red: #EE4000;
 
 /* animations */
 .congrats {
-    animation-duration: 2s;
+    animation-duration: 1.5s;
     animation-name: winnerText;
-    animation-iteration-count: 3;
+    animation-iteration-count: 5;
     animation-direction: alternate;
     animation-timing-function: ease-inout;
     animation-fill-mode: forwards;
@@ -58,14 +58,13 @@ $red: #EE4000;
         color: yellow;
     }
     50%{
-        // font-size: 130px;
         color: #F012BE;
     }
     75%{
-        // font-size: 140px;
         color: orangered;
     }
     100%{
+        transform: rotate(360deg);
         color: black;
     }
 }
