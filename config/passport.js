@@ -1,5 +1,5 @@
-let localStrategy = require('passport-local').Strategy;
-let User = require('../models/user.js');
+let localStrategy  = require('passport-local').Strategy;
+let User           = require('../models/user.js');
 
 module.exports = function(passport){
 
@@ -24,8 +24,8 @@ module.exports = function(passport){
 
             // There is a user with this email
             if(user){
-                console.log("Found a user!");
-                return callback(null, false, req.flash('signupMessage', 'Email in use'));
+                console.log("User already exists!");
+                return callback(null, false, req.flash('signupMessage', 'That email is already in use.'));
             } else{
                 // Create new user
                 let newUser = new User();

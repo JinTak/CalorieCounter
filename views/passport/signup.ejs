@@ -13,6 +13,7 @@
 <body id="authentication_body">
 
     <div class="authentication_container">
+
         <h1>Sign Up</h1>
         <form id="authentication_form" action="/signup" method="POST">
 
@@ -33,7 +34,13 @@
                 <input id="password" type="password" name="password" placeholder="Enter Password" required>
                 
             </div>
+
             <br>
+
+            <% if (message.length > 0) { %>
+                <div class="alert alert-danger"><%= message %></div>
+            <% } %>
+        
             <input id="authentication_submit" type="submit" value="Submit">
 
         </form>

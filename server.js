@@ -250,7 +250,8 @@ app.delete('/delete-food/:id', (req, res)=>{
 
 // GET: Route to signup page
 app.get('/signup', (req, res)=>{
-    res.render('./passport/signup.ejs');
+    // res.render('./passport/signup.ejs');
+    res.render('./passport/signup.ejs', { message: req.flash('signupMessage') });
 });
 
 // POST: Route to signup page
@@ -265,16 +266,22 @@ app.post('/signup', (req, res, next)=>{
     return signupStragety(req, res, next);
 });
 
-// POST: Route to signin page
-app.post('/signin', (req, res, next)=>{
-    let signupStragety = passport.authenticate('local-signup', {
-        successRedirect: '/home',
-        failureRedirect: '/signup',
-        failureFlash: true
-    });
-
-    return signupStragety(req, res, next);
+// GET: Route to signup page
+app.get('/signup', (req, res)=>{
+    // res.render('./passport/signup.ejs');
+    res.render('./passport/signup.ejs', { message: req.flash('signupMessage') });
 });
+
+// POST: Route to signin page
+// app.post('/signin', (req, res, next)=>{
+//     let signupStragety = passport.authenticate('local-signup', {
+//         successRedirect: '/home',
+//         failureRedirect: '/signup',
+//         failureFlash: true
+//     });
+
+//     return signupStragety(req, res, next);
+// });
 
 // Route to congratulations page
 app.get('/congratulations', (req, res)=>{

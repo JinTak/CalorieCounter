@@ -4,16 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sign In</title>
-
-    <link href="https://fonts.googleapis.com/css?family=Roboto|Anton|Lato|Permanent+Marker" rel="stylesheet">
+    <title>MASS | Sign In</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Anton|Permanent+Marker" rel="stylesheet">
 
     <link rel="stylesheet" href="../../styles/main.css">
+    
 </head>
 <body id="authentication_body">
+
     <div class="authentication_container">
-        SIGNIN!!!
-    </div>
-    
+
+        <h1>Sign In</h1>
+        <form id="authentication_form" action="/signup" method="POST">
+
+            <div class="form_input">
+                   
+                <label for="email">Email</label>
+                <br>
+                <input id="email" type="email" name="email" placeholder="Enter Email" required>
+                
+            </div>
+            
+            <br>
+
+            <div class="form_input">
+            
+                <label for="password">Password</label>
+                <br>
+                <input id="password" type="password" name="password" placeholder="Enter Password" required>
+                
+            </div>
+
+            <br>
+
+           
+        
+            <input id="authentication_submit" type="submit" value="Submit">
+
+        </form>
+    </div>  
+
 </body>
 </html>
