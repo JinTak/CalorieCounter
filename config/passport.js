@@ -3,22 +3,23 @@ let User           = require('../models/user.js');
 
 module.exports = function(passport){
 
-    passport.serializeUser( (user, callback)=>{
+    passport.serializeUser( function(user, callback){
         callback(null, user.id);
     });
 
-    passport.deserializeUser( (id, callback)=>{
-        User.findById(id, (err, user)=>{
+    passport.deserializeUser( function(id, callback){
+        User.findById(id, function(err, user){
             callback(err, user);
         });
     });
 
+    // Strategy for SIGN UP
     passport.use('local-signup', new localStrategy({
         usernameField: 'email',
         passwordField: 'password',
         passReqToCallback: true
-    }, (req, email, password, callback)=>{
-        User.findOne({'email': email}, (err, user)=>{
+    }, function(req, email, password, callback){
+        User.findOne({ 'email': email }, function(err, user){
             // There was an error
             if(err) return callback(err);
 
@@ -31,8 +32,9 @@ module.exports = function(passport){
                 let newUser = new User();
                 newUser.email = email;
                 newUser.password = newUser.encrypt(password);
+                newUser.username = req.body.customUsername;
 
-                newUser.save( (err)=>{
+                newUser.save( function(err){
                     if(err) return callback(err);
                     return callback(null, newUser);
                 });
@@ -41,12 +43,34 @@ module.exports = function(passport){
       
     }));
 
-    // passport.use('local-login', new LocalStrategy({
-    //     usernameField : 'email',
-    //     passwordField : 'password',
-    //     passReqToCallback : true
-    // }, function(req, email, password, callback){
 
-    // }));
+    // Strategy for SIGN IN
+    passport.use('local-login', new localStrategy({
+        usernameField : 'email',
+        passwordField : 'password',
+        passReqToCallback : true
+    }, function(req, email, password, callback){
+        // Searching for a user with the email input
+        User.findOne({ 'email' : email }, function(err, user){
+            console.log('checking credentials..');
+            console.log(user);
 
-}
+            if(err){
+                return callback(err);
+            }
+            // // If no user is found in the database
+            if(!user){
+                return callback(null, false, req.flash('loginMessage', 'User not found. Try again.'));
+            }
+
+            // // If user enters incorrect password
+            if(!user.validPassword(password)){
+                return callback(null, false, req.flash('loginMessage', 'Incorrect password. Try again.'));
+            }
+            console.log('passsssss');
+            return callback(null, user);
+        });
+
+    }));
+
+};

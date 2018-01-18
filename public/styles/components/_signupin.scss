@@ -22,7 +22,6 @@ $grey: #A9A9A9;
     width: 30%;
     height: 80%;
     margin: 60px auto;
-    padding-top: 50px;
     background-color: rgba(255,255,255, 0.7);
     box-shadow: 0 20px 20px rgba(#000, .5); 
     text-align: center;
@@ -53,7 +52,7 @@ $grey: #A9A9A9;
             border-radius: 3px;
             border: 3px solid black;
             cursor: pointer;
-            margin-top: 50px;
+            margin-top: 30px;
 
             &:hover {
                 border: 3px solid $main-color-blue;
@@ -67,6 +66,7 @@ $grey: #A9A9A9;
 
         input {
             padding-left: 20px;
+            
         }
 
         input::-webkit-input-placeholder { /* WebKit browsers */
@@ -89,7 +89,7 @@ $grey: #A9A9A9;
         
         #email {
             height: 50px;
-            width: 350px;
+            width: 85%;
             border-bottom: 3px solid transparent;
             margin-top: 20px;
 
@@ -101,9 +101,24 @@ $grey: #A9A9A9;
             }
         }
 
+        #customUsername {
+            height: 50px;
+            width: 85%;
+            border-bottom: 3px solid transparent;
+            margin-top: 20px;
+
+            &:focus {
+                border-bottom: 3px solid $lime;
+            }
+            &:focus:invalid {
+                border-bottom: 3px solid $red;
+            }
+        }
+
+
         #password {
             height: 50px;
-            width: 350px;
+            width: 85%;
             border-bottom: 3px solid transparent;
             margin-top: 20px;
 
@@ -120,6 +135,8 @@ $grey: #A9A9A9;
 }
 
 
-
+.red {
+    color: $red;
+}
 
 

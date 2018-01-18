@@ -16,6 +16,15 @@
 
         <h1>Sign Up</h1>
         <form id="authentication_form" action="/signup" method="POST">
+            <div class="form_input">
+                   
+                <label for="username">Username</label>
+                <br>
+                <input id="customUsername" type="text" name="customUsername" placeholder="Enter Username" required>
+                
+            </div>
+            
+            <br>
 
             <div class="form_input">
                    
@@ -38,7 +47,7 @@
             <br>
 
             <% if (message.length > 0) { %>
-                <div class="alert alert-danger"><%= message %></div>
+                <div class="red"><%= message %></div>
             <% } %>
         
             <input id="authentication_submit" type="submit" value="Submit">

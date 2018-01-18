@@ -20,6 +20,13 @@ $green: #3D9970;
     padding-top: 35px;
     text-align: center;
 
+    .userGreeting {
+        font-size: 60px;
+        font-family: 'Permanent Marker', 'Anton', sans-serif;
+        color: $lime;
+        text-shadow: 0 0 10px $black;
+    }
+
     h1 {
         font-size: 150px;
         letter-spacing: 15px;
@@ -58,7 +65,7 @@ $green: #3D9970;
         padding: 15px;
         margin-bottom: 30px;
         width: 55%;
-        margin: 50px auto;
+        margin: 30px auto;
         background: $black;
         box-shadow: 0 20px 20px rgba(#000, .5); 
     }
@@ -89,6 +96,8 @@ $green: #3D9970;
         font-family: 'Permanent Marker', 'Anton', sans-serif;
     }
 }
+
+
 
 #goal {
     font-family: 'Permanent Marker';

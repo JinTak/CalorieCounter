@@ -1,3 +1,6 @@
+// MASS
+// AUTHOR: Jin Tak
+
 // Requiring necessary modules
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -34,6 +37,11 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 require('./config/passport')(passport);
+// Passport middleware to make user object available globally
+app.use(function(req, res, next){
+    res.locals.currentUser = req.user;
+    next();
+});
 
 // Setting path to views folder
 app.set('views', path.join(__dirname, 'views'));
@@ -59,7 +67,7 @@ app.get('/', (req, res)=>{
 });
 
 app.get('/home', (req, res)=>{
-    res.sendFile(__dirname + '/views/home.html');
+    res.render('home.ejs');
 });
 
 app.get('/eat', (req, res)=>{
@@ -257,9 +265,9 @@ app.get('/signup', (req, res)=>{
 app.post('/signup', (req, res, next)=>{
     
     let signupStragety = passport.authenticate('local-signup', {
-        successRedirect: '/home',
-        failureRedirect: '/signup',
-        failureFlash: true
+        successRedirect : '/home',
+        failureRedirect : '/signup',
+        failureFlash    : true
     });
 
     return signupStragety(req, res, next);
@@ -268,18 +276,18 @@ app.post('/signup', (req, res, next)=>{
 // GET: Route to signup page
 app.get('/signin', (req, res)=>{
     // res.render('./passport/signup.ejs');
-    res.render('./passport/signin.ejs', { message: req.flash('signinMessage') });
+    res.render('./passport/signin.ejs', { message: req.flash('loginMessage') });
 });
 // POST: Route to signin page
-// app.post('/signin', (req, res, next)=>{
-//     let signupStragety = passport.authenticate('local-signup', {
-//         successRedirect: '/home',
-//         failureRedirect: '/signup',
-//         failureFlash: true
-//     });
+app.post('/signin', (req, res, next)=>{
+    var loginStrategy = passport.authenticate('local-login', {
+        successRedirect : '/home',
+        failureRedirect : '/signin',
+        failureFlash    : true
+    });
 
-//     return signupStragety(req, res, next);
-// });
+    return loginStrategy(req, res, next);
+});
 
 // Route to congratulations page
 app.get('/congratulations', (req, res)=>{

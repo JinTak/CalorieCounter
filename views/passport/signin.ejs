@@ -37,7 +37,9 @@
 
             <br>
 
-           
+            <% if (message.length > 0) { %>
+                <div class="red"><%= message %></div>
+            <% } %>
         
             <input id="authentication_submit" type="submit" value="Submit">
 
