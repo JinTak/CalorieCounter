@@ -289,6 +289,17 @@ app.post('/signin', (req, res, next)=>{
     return loginStrategy(req, res, next);
 });
 
+// Route to LOGOUT
+app.get('/logout', (req, res, next)=>{
+
+    function getLogout(request, response) {
+        request.logout();
+        response.redirect('/');
+    }
+
+    getLogout(req, res);
+});
+
 // Route to congratulations page
 app.get('/congratulations', (req, res)=>{
     res.sendFile(path.join(__dirname+'/views/congratulations.html'));

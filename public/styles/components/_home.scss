@@ -21,10 +21,17 @@ $green: #3D9970;
     text-align: center;
 
     .userGreeting {
-        font-size: 60px;
+        font-size: 70px;
         font-family: 'Permanent Marker', 'Anton', sans-serif;
         color: $lime;
         text-shadow: 0 0 10px $black;
+    }
+    .userContainer {
+        width: 100%;
+        .userBox {
+            width: 60%;
+            margin: 0 auto;
+        }
     }
 
     h1 {
