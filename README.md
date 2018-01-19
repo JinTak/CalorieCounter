@@ -33,6 +33,6 @@ BACK END:
 - SVG gooey menu.
 - Dynamically filling progress bar.
 
-[Wireframe](#)
+[Wireframe](public/images/Mass_Wireframe.pdf)
 
 [Trello: User Stories](https://trello.com/b/Nd4f5qKd/mass)
