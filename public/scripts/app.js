@@ -14,3 +14,11 @@ calorieSubmit.addEventListener('click', (e)=>{
     localStorage.setItem("setGoal", caloric_Goal);
 });
 
+
+// Reset local storage on logout
+let logoutBtn = document.getElementById('logoutBtn');
+
+logoutBtn.addEventListener('click', ()=>{
+    localStorage.setItem("caloriesRemaining", 0);
+    localStorage.setItem("setGoal", 0);
+})

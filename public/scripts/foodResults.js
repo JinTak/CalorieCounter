@@ -69,3 +69,12 @@ for(var i = 0; i < foodModalSubmit.length; i++) {
        
     });
 }
+
+
+// Reset local storage on logout
+let logoutBtn = document.getElementById('logoutBtn');
+
+logoutBtn.addEventListener('click', ()=>{
+    localStorage.setItem("caloriesRemaining", 0);
+    localStorage.setItem("setGoal", 0);
+})

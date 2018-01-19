@@ -16,5 +16,13 @@ eatFoodBtn.addEventListener('click', ()=>{
 });
 
 
+// Reset local storage on logout
+let logoutBtn = document.getElementById('logoutBtn');
+
+logoutBtn.addEventListener('click', ()=>{
+    localStorage.setItem("caloriesRemaining", 0);
+    localStorage.setItem("setGoal", 0);
+})
+
 
 

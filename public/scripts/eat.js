@@ -35,3 +35,10 @@ if(caloriesRemaining <= 0) {
 putGoalHere.innerHTML = setGoal;
 remainingCalories.innerHTML = caloriesRemaining;
 
+// Reset local storage on logout
+let logoutBtn = document.getElementById('logoutBtn');
+
+logoutBtn.addEventListener('click', ()=>{
+    localStorage.setItem("caloriesRemaining", 0);
+    localStorage.setItem("setGoal", 0);
+})
