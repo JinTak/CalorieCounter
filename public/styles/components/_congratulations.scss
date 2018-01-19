@@ -11,16 +11,31 @@ $red: #EE4000;
         width: 80%;
         height: 100%;
         margin: 0 auto;
-        padding: 50px;
+        padding: 20px 50px 50px 50px;
         text-align: center;
 
         h1 {
             font-family: 'Permanent Marker';
-            font-size: 200px;
+            font-size: 170px;
+            padding: 0;
+            margin: 0;
+            
+            
         }   
+        h2 {
+            font-family: 'Permanent Marker';
+            font-size: 90px;
+            padding: 0;
+            margin: 0;
+            color: yellow;
+            text-shadow: 0 0 15px black;
+        }
 
         p {
+            font-family: 'Permanent Marker';
             font-size: 60px;
+            color: yellow;
+            text-shadow: 0 0 20px black;
         }
     }
 
@@ -28,11 +43,12 @@ $red: #EE4000;
         display: inline-block;
         margin-top: 40px;
         border: 5px solid black;
-        padding: 20px;
-        font-size: 50px;
+        padding: 15px;
+        font-size: 20px;
         border-radius: 10px;
         background: yellow;
         transition: all .3s;
+        font-family: 'Permanent Marker';
         
         &:hover {
             background: black;

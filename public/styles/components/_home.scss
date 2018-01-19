@@ -35,7 +35,7 @@ $green: #3D9970;
     }
 
     h1 {
-        font-size: 150px;
+        font-size: 125px;
         letter-spacing: 15px;
         font-family: 'Permanent Marker', 'Anton', sans-serif;
         width: 600px;
@@ -45,6 +45,7 @@ $green: #3D9970;
         color: $yellow;
         box-shadow: 0 20px 20px rgba(#000, .5); 
         border-radius: 10px;
+        padding-top: 0;
     }
 
     h2 {
@@ -69,9 +70,9 @@ $green: #3D9970;
         font-size: 20px;
         border: 2px solid rgba(255, 0, 0, 0.7);
         border-radius: 10px;
-        padding: 15px;
+        padding: 15px 30px 30px 30px;
         margin-bottom: 30px;
-        width: 55%;
+        width: 50%;
         margin: 30px auto;
         background: $black;
         box-shadow: 0 20px 20px rgba(#000, .5); 
@@ -99,6 +100,7 @@ $green: #3D9970;
     }
     
     label {
+
         font-size: 35px;
         font-family: 'Permanent Marker', 'Anton', sans-serif;
     }
